@@ -1,36 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crear Usuario</title>
-</head>
+@section('title', 'Crear Usuario') <!-- Para personalizar el título de la página -->
 
-<body>
-    <h1>Bienvenido a Crear Usuario</h1>
-    <form action="{{ route('user.store') }}" method="POST">
-        @csrf
-        <label for="name">nombre </label>
-        <input type="text" name="name" required>
+@section('content')
+    <div class="container mt-4">
+        <h1 class="text-center">Crear Usuario</h1>
+        <form action="{{ route('user.store') }}" method="POST" class="mt-4">
+            @csrf
 
-        <br>
-        <br>
-        <label for="email">email </label>
-        <input type="email" name="email" required>
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" class="form-control" required>
+            </div>
 
-        <br>
-        <br>
-        <label for="password">contraseña</label>
-        <input type="password" name="password" required>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+            </div>
 
-        <br>
-        <br>
-        <button type="submit">Crear</button>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div>
 
-    </form>
-
-</body>
-
-</html>
+            <button type="submit" class="btn btn-primary">Crear</button>
+        </form>
+    </div>
+@endsection
