@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
+    //relacion usuarios con tareas, uno a muchos
    public function user(){
         return $this-> belongsTo('App\Models\User');
     }

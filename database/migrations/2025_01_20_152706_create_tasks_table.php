@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-//foranea de Users
+            //foranea de Users
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             -> references('id')
