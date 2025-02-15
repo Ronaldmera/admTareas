@@ -47,6 +47,7 @@ main {
     font-size: 22px;
     font-weight: 600;
     color: var(--text-main);
+    text-shadow:  1px 1px 3px #1d76b9;
     margin: 0 0 24px;
     text-align: center;
     letter-spacing: -0.01em;
