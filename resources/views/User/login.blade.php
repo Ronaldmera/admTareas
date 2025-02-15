@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     @vite(['resources/css/Login/style.css'])
+    @vite(['resources/js/login/showPassword.js'])
+
 </head>
 
 <body>
     <main>
+
+
         <!-- From Uiverse.io by kyle1dev -->
         <form class="modern-form" action="{{ route('login') }}" method="POST">
             @csrf
@@ -33,7 +37,8 @@
                             d="M12 10V14M8 6H16C17.1046 6 18 6.89543 18 8V16C18 17.1046 17.1046 18 16 18H8C6.89543 18 6 17.1046 6 16V8C6 6.89543 6.89543 6 8 6Z">
                         </path>
                     </svg>
-                    <input required name="password" placeholder="Password" class="form-input" type="password" />
+                    <input required id="password" name="password" placeholder="Password" class="form-input"
+                        type="password" />
                     <button class="password-toggle" type="button">
                         <svg fill="none" viewBox="0 0 24 24" class="eye-icon">
                             <path stroke-width="1.5" stroke="currentColor"
@@ -45,7 +50,7 @@
                 </div>
             </div>
 
-            <button class="submit-button" type="submit">
+            <button class="submit-button" id="btn-login" type="submit">
                 <span class="button-text">Login</span>
                 <div class="button-glow"></div>
             </button>

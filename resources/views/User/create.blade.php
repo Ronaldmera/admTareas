@@ -1,10 +1,17 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('title', 'Crear Usuario') <!-- Para personalizar el título de la página -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Registro usuarios</title>
+</head>
 
-@section('content')
+<body>
     <div class="container mt-4">
-        <h1 class="text-center">Crear Usuario</h1>
+        <h1 class="text-center">Regístrate en ADM Task</h1>
         <form action="{{ route('user.store') }}" method="POST" class="mt-4">
             @csrf
 
@@ -26,4 +33,7 @@
             <button type="submit" class="btn btn-primary">Crear</button>
         </form>
     </div>
-@endsection
+
+</body>
+
+</html>
