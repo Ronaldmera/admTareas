@@ -5,14 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <!-- scripts SweetAlert libreria-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     @vite(['resources/css/Login/style.css'])
     @vite(['resources/js/login/showPassword.js'])
+
 
 </head>
 
 <body>
-    <main>
+    <!-- si el usuario borra el perfil se activa este if y muestra una animacion de borrado adecuado  -->
+    @if (session('eliminar') == 'ok')
+        @vite(['resources/js/user/msjUserDelete.js'])
+    @endif
 
+    <main>
 
         <!-- From Uiverse.io by kyle1dev -->
         <form class="modern-form" action="{{ route('login') }}" method="POST">

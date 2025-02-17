@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <!-- scripts SweetAlert libreria-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    @vite(['resources/js/user/delete.js'])
-
-
+    @vite(['resources/js/user/userDelete.js'])
 </head>
 
 <body>
@@ -28,8 +27,9 @@
         <button type="submit">eliminar perfil</button>
     </form>
 
-
+    <!-- enlace que permite editar usuario-->
     <a href="{{ route('user.edit', auth()->user()->id) }}">Editar</a>
+
 
 </body>
 
