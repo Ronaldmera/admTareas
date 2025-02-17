@@ -21,7 +21,10 @@
         @csrf
         @method('delete')
         <button type="submit">eliminar perfil</button>
-    </form>
+
+
+        <a href="{{ route('user.edit', auth()->user()->id) }}">Editar</a>
+
 </body>
 
 </html>
