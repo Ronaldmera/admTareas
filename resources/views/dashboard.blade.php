@@ -16,6 +16,12 @@
         @csrf
         <button type="submit">Cerrar sesión</button>
     </form>
+    <!-- Formulario para eliminar el perfil -->
+    <form action="{{ route('user.destroy', auth()->user()->id) }}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">eliminar perfil</button>
+    </form>
 </body>
 
 </html>

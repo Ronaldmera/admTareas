@@ -24,6 +24,9 @@ Route::middleware('auth')->get('/dashboard', [DashboardController::class, 'index
 
 //controla los usuarios
 Route::controller(UserController::class)->group(function(){
-    Route::get('user/create','create')->name('user.create');
-    Route::post('user/store', 'store')->name('user.store');
+    Route::get('user/create','create')->name('user.create');//crea usuario
+    Route::post('user/store', 'store')->name('user.store');//guarda el usuario el bd
+    Route::get('user/{id}/edit','edit')->name('user.edit');//edita el usuario
+    Route::put('user/{id}','update')->name('user.update');//actualiza el usuario y guarda en bd
+    Route::delete('user/{id}','destroy')->name('user.destroy');//elimina el usuario
 });

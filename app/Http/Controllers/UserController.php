@@ -16,5 +16,11 @@ class UserController extends Controller
         $user -> email = $request-> email;
         $user -> password = $request-> password;
         $user-> save();
+        return redirect()->route('user.login');
+    }
+    public function destroy($id){
+        $user = User::find($id);
+        $user -> delete();
+        return redirect()->route('user.login');
     }
 }
