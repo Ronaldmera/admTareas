@@ -7,7 +7,7 @@
             </a>
         </div>
         <nav>
-            <ul>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="{{ route('dashboard') }}">Inicio</a></li>
                 <li><a href="#">Tareas</a></li>
                 <li><a href="#">Agregar Tarea</a></li>
@@ -21,9 +21,11 @@
                     </form>
                 </li>
             </ul>
-
-
+            <div class="hamburguer" id="hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
-
     </div>
 </header>

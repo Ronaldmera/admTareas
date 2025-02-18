@@ -7,6 +7,7 @@
     <title>@yield('title', 'ADM Tasks')</title>
     @vite(['resources/css/nav/style.css'])
     @vite(['resources/css/global.css'])
+    @vite(['resources/js/nav/hamburguer.js'])
 </head>
 
 <body>
