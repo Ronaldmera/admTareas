@@ -1,22 +1,29 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">TaskManager</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tareas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Perfil</a>
+<header>
+    <div class="container">
+        <!-- Logo o Nombre de la Aplicación -->
+        <div class="logo">
+            <a href="{{ route('dashboard') }}">
+                <h1>ADM Taks</h1>
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ route('dashboard') }}">Inicio</a></li>
+                <li><a href="#">Tareas</a></li>
+                <li><a href="#">Agregar Tarea</a></li>
+                <!-- Botón de Cerrar Sesión con Ícono -->
+                <li class="logout">
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="logout-btn">
+                            <img src="{{ asset('images/logout/exit.svg') }}" alt="Cerrar sesión" class="logout-img">
+                        </button>
+                    </form>
                 </li>
             </ul>
-        </div>
+
+
+        </nav>
+
     </div>
-</nav>
+</header>
