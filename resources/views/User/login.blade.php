@@ -11,16 +11,29 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     @vite(['resources/css/Login/style.css'])
+    <!-- estilos de error al logearse-->
+    @vite(['resources/css/Login/login_error.css'])
+
+    <!-- js-->
+    <!-- js muestra la contraseña y la oculta al hacer click en el icono del ojo-->
     @vite(['resources/js/login/showPassword.js'])
+
 
 
 </head>
 
 <body>
+    <!-- si la contraseña no coincide o hay algun error en el login se ejecuta este if  -->
+    @if ($errors->has('email'))
+        <div class="error-message">
+            {{ $errors->first('email') }}
+        </div>
+    @endif
     <!-- si el usuario borra el perfil se activa este if y muestra una animacion de borrado adecuado  -->
     @if (session('eliminar') == 'ok')
         @vite(['resources/js/user/msjUserDelete.js'])
     @endif
+
 
     <main>
 

@@ -21,12 +21,9 @@ class AuthController extends Controller
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             return redirect()->intended('dashboard');//pagina principal
-
         }
 
-        return back()->withErrors([
-            'email' => 'Las credenciales no coinciden con nuestros registros.',
-        ]);
+        return back()->withErrors(['email' => 'La contraseña o correo no coinciden'])->withInput(); //si hay errores se muestra este mensaje
     }
 
 public function logout(Request $request)
