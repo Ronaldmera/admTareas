@@ -105,7 +105,9 @@ main {
     width: 16px;
     height: 16px;
 }
-
+.close-eye{
+    display: none;
+}
 .submit-button {
     position: relative;
     width: 100%;
