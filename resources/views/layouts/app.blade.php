@@ -9,6 +9,7 @@
     @vite(['resources/css/global.css'])
     @vite(['resources/css/footer/style.css'])
     @vite(['resources/js/nav/hamburguer.js'])
+    @vite(['resources/css/dashboard/style.css'])
 </head>
 
 <body>
