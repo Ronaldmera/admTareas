@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 
-class TaksController extends Controller
+class TaskController extends Controller
 {
-    //
+
 }
