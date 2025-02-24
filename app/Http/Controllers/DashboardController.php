@@ -9,10 +9,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $tasks = Task::all(); // Obtiene todas las tareas
+        $pendingTasks = Task::where('status', '=','pendiente')->orderBy('created_at', 'desc')->get();//obtine las tareas pendientes y de manera desc
 
-        $pendingTasks = $tasks -> where('status', '==', 'pendiente');//obtiene las tareas pendientes
         return view('dashboard', compact('pendingTasks')); // Envía $tasks a la vista
     }
+
 
 }

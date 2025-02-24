@@ -33,5 +33,10 @@ Route::controller(UserController::class)->group(function(){
     Route::delete('user/{id}','destroy')->name('user.destroy');//elimina el usuario
 });
 
+Route::controller(TaskController::class)->group(function(){
+    Route::get('task/create', 'create')->name('task.create');
+    Route::post('task/store', 'store')->name('task.store');
+});
+
 
 

@@ -3,30 +3,30 @@
 @section('content')
     <div class="dashboard-container">
         <h1 class="dashboard-title">Bienvenido, {{ auth()->user()->name }}!</h1>
-        <h2> Tareas Pendientes</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Titulo</th>
-                    <th>Descripcion</th>
-                    <th>Estado</th>
-                </tr>
-
-            </thead>
-            <tbody>
-                @foreach ($pendingTasks as $pendingTask)
-                    <tr>
-                        <td>{{ $pendingTask->title }}</td>
-                        <td>{{ $pendingTask->content }}</td>
-                        <td>{{ $pendingTask->status }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    <div class="a">
-
-
-
+        <div class="pending-tasks">
+            <h2> Tareas Pendientes</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                            <th>Fecha de Creación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($pendingTasks as $pendingTask)
+                            <tr>
+                                <td class="item">{{ $pendingTask->title }}</td>
+                                <td class="content">{{ $pendingTask->content }}</td>
+                                <td>{{ $pendingTask->status }}</td>
+                                <td> {{ $pendingTask->created_at->format('d-m-Y') }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 @endsection
