@@ -11,8 +11,8 @@ class DashboardController extends Controller
     {
         $tasks = Task::all(); // Obtiene todas las tareas
 
-        $tasksComplete = $tasks -> where('status', '==', 'pendiente');//obtiene las tareas pendientes
-        return view('dashboard', compact('tasksComplete')); // Envía $tasks a la vista
+        $pendingTasks = $tasks -> where('status', '==', 'pendiente');//obtiene las tareas pendientes
+        return view('dashboard', compact('pendingTasks')); // Envía $tasks a la vista
     }
 
 }
