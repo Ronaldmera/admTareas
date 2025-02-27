@@ -34,8 +34,11 @@ Route::controller(UserController::class)->group(function(){
 });
 
 Route::controller(TaskController::class)->group(function(){
+    Route::get('tasks', 'index')->name('task.index');
     Route::get('task/create', 'create')->name('task.create');
     Route::post('task/store', 'store')->name('task.store');
+    Route::delete('task/{id}', 'destroy')->name('task.destroy');
+
 });
 
 

@@ -6,30 +6,39 @@
         <div class="pending-tasks">
             <h2> Tareas Pendientes</h2>
             <div class="table-responsive">
-                @if ($pendingTasks->isEmpty())
-                    <p class="no-tasks-message">No hay tareas pendientes.</p>
-                @else
-                    <table>
-                        <thead>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                            <th>Fecha de Creación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if ($pendingTasks->isEmpty())
                             <tr>
-                                <th>Título</th>
-                                <th>Descripción</th>
-                                <th>Estado</th>
-                                <th>Fecha de Creación</th>
+                                <td class="msj-task-empty" colspan="5">No hay tareas disponibles</td>
                             </tr>
-                        </thead>
-                        <tbody>
+                        @else
                             @foreach ($pendingTasks as $pendingTask)
                                 <tr>
-                                    <td class="item">{{ $pendingTask->title }}</td>
+
+                                    @csrf
+
+                                    <td class="item"><a href="https://fonts.google.com/">{{ $pendingTask->title }}</a>
+                                    </td>
                                     <td class="content">{{ $pendingTask->content }}</td>
                                     <td>{{ $pendingTask->status }}</td>
                                     <td> {{ $pendingTask->created_at->format('d-m-Y') }}</td>
+                                    </form>
+
                                 </tr>
                             @endforeach
-                        </tbody>
-                    </table>
-                @endif
+                        @endif
+                    </tbody>
+                </table>
+
             </div>
 
         </div>

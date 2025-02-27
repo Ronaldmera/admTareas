@@ -17,6 +17,13 @@
         <label for="content"> contenido</label>
         <br>
         <textarea name="content"></textarea>
+        <br>
+        <label for="status">Estado</label>
+        <br>
+        <select name="status" id="">
+            <option>pendiente</option>
+            <option>completada</option>
+        </select>
         <button type="submit">Agregar Tarea</button>
     </form>
 
