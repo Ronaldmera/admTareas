@@ -16,6 +16,7 @@
     @vite(['resources/css/footer/style.css'])
     @vite(['resources/js/nav/hamburguer.js'])
     @vite(['resources/css/dashboard/style.css'])
+    {{-- @vite(['resources/css/task/style.css']) --}}
     @vite(['resources/js/task/taskDelete.js'])
 
 </head>

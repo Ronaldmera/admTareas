@@ -8,7 +8,7 @@
 
     <div class="dashboard-container">
         <div class="pending-tasks">
-            <h2> Todas las Tareas</h2>
+            <h2 class="title"> Todas las Tareas</h2>
             <div class="table-responsive">
                 <table>
                     <thead>
