@@ -75,17 +75,32 @@ tbody td {
     padding: 12px;
     color: #555;
 }
+.action{
+    display: flex;
+    align-items: center; /* Centra verticalmente los hijos */
+    height: 100%;
+}
 
 .action a, .action button {
     text-decoration: none;
     border: none;
     padding: 6px 10px;
+    width: 100%;
     margin: 2px;
     border-radius: 5px;
     color: white;
     font-size: 14px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
+    text-align: center;
+}
+.action form {
+    display: inline-block; /* Hace que el formulario no afecte el botón */
+    width: 100%;
+}
+
+.action form button {
+    width: 100%; /* Igualar el ancho de los enlaces */
 }
 
 .action a:nth-child(1) {
@@ -111,20 +126,25 @@ tbody td {
 .action form button:hover {
     background: #c82333;
 }
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 5%;
+    }
+}
+
 @media (max-width: 1024px){
     .dashboard-container {
         padding: 0 0;
     }
+    .action{
+        display: flex;
+        flex-direction: column;
+    }
 }
 @media (max-width: 768px) {
-    /* .dashboard-container {
-        padding: 0 0;
-    } */
-    table {
-        /* display: block;
-        overflow-x: auto;
-        white-space: nowrap; */
-    }
+
     .action a, .action button {
         font-size: 12px;
         padding: 4px 8px;
@@ -157,6 +177,9 @@ tbody td {
     }
     .action {
         display: flex;
-        justify-content: space-around;
+        flex-direction: row;
+    }
+    .action a, .action button {
+       width: 90%;
     }
 }
