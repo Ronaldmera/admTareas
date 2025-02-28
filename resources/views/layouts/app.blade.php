@@ -10,14 +10,18 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 
     @vite(['resources/css/nav/style.css'])
     @vite(['resources/css/global.css'])
     @vite(['resources/css/footer/style.css'])
     @vite(['resources/js/nav/hamburguer.js'])
     @vite(['resources/css/dashboard/style.css'])
-    {{-- @vite(['resources/css/task/style.css']) --}}
+    @vite(['resources/css/task/style.css'])
     @vite(['resources/js/task/taskDelete.js'])
+    @vite(['resources/js/task/grafic.js'])
 
 </head>
 

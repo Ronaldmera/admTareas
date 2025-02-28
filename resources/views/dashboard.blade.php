@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <h1 class="dashboard-title">Bienvenido, {{ auth()->user()->name }}!</h1>
     <div class="dashboard-container">
-        <h1 class="dashboard-title">Bienvenido, {{ auth()->user()->name }}!</h1>
         <div class="pending-tasks">
             <h2> Tareas Pendientes</h2>
             <div class="table-responsive">
@@ -42,5 +43,13 @@
             </div>
 
         </div>
+        <div class="grafic">
+            <h2>Diagrama</h2>
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
+    <script>
+        var pending = @json($pending);
+        var complete = @json($complete);
+    </script>
 @endsection

@@ -1,8 +1,16 @@
 /* Contenedor principal */
 .dashboard-container {
     display: flex;
-    flex-direction: column;
-    padding: 0 15%;
+    flex-direction: row;
+    padding: 0 12%;
+    align-items: center;
+    gap: 5%;
+}
+#myChart {
+    max-width: 400px;  /* Ajusta el ancho */
+    max-height: 400px; /* Ajusta la altura */
+    margin: auto;      /* Centra el gráfico */
+    display: block;
 }
 
 /* Título principal */
@@ -80,6 +88,18 @@ tbody td {
     align-items: center; /* Centra verticalmente los hijos */
     height: 100%;
 }
+.grafic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.grafic h2{
+    margin-bottom: 0.3rem;
+}
 
 .action a, .action button {
     text-decoration: none;
@@ -144,6 +164,9 @@ tbody td {
     }
 }
 @media (max-width: 768px) {
+    /* .dashboard-container {
+       display: block;
+    } */
 
     .action a, .action button {
         font-size: 12px;

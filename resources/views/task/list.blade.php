@@ -6,10 +6,10 @@
         @vite(['resources/js/task/msjTaskDelete.js'])
     @endif
 
-    <div class="dashboard-container">
-        <div class="pending-tasks">
+    <div class="tasks-container">
+        <div class="all-tasks">
             <h2 class="title"> Todas las Tareas</h2>
-            <div class="table-responsive">
+            <div class="table-resp">
                 <table>
                     <thead>
                         <tr>
