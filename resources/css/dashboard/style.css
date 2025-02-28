@@ -7,9 +7,9 @@
     gap: 5%;
 }
 #myChart {
-    max-width: 400px;  /* Ajusta el ancho */
-    max-height: 400px; /* Ajusta la altura */
-    margin: auto;      /* Centra el gráfico */
+    max-width: 400px;
+    max-height: 400px;
+    margin: auto;
     display: block;
 }
 
@@ -50,7 +50,7 @@
     overflow-x: auto;
 }
 
-table {
+.dashboard-container table {
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
@@ -60,34 +60,31 @@ table {
     overflow: hidden;
 }
 
-thead {
+.dashboard-container thead {
     background: #f8f9fa;
-    color: #333;
-    text-align: left;
+    color: #4e89e7de;
+    text-align: center;
 }
 
-thead th {
+.dashboard-container thead th {
     padding: 12px;
     font-weight: bold;
 }
 
-tbody tr {
+.dashboard-container tbody tr {
     border-bottom: 1px solid #ddd;
 }
 
-tbody tr:last-child {
+.dashboard-container tbody tr:last-child {
     border-bottom: none;
 }
 
-tbody td {
+.dashboard-container tbody td {
     padding: 12px;
     color: #555;
+    border-right: 1px solid #55555528;
 }
-.action{
-    display: flex;
-    align-items: center; /* Centra verticalmente los hijos */
-    height: 100%;
-}
+
 .grafic{
     display: flex;
     flex-direction: column;
@@ -101,51 +98,6 @@ tbody td {
     margin-bottom: 0.3rem;
 }
 
-.action a, .action button {
-    text-decoration: none;
-    border: none;
-    padding: 6px 10px;
-    width: 100%;
-    margin: 2px;
-    border-radius: 5px;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    text-align: center;
-}
-.action form {
-    display: inline-block; /* Hace que el formulario no afecte el botón */
-    width: 100%;
-}
-
-.action form button {
-    width: 100%; /* Igualar el ancho de los enlaces */
-}
-
-.action a:nth-child(1) {
-    background: #17a2b8;
-}
-
-.action a:nth-child(1):hover {
-    background: #138496;
-}
-
-.action a:nth-child(2) {
-    background: #28a745;
-}
-
-.action a:nth-child(2):hover {
-    background: #218838;
-}
-
-.action form button {
-    background: #dc3545;
-}
-
-.action form button:hover {
-    background: #c82333;
-}
 @media (min-width: 1024px) and (max-width: 1440px) {
     .dashboard-container {
         display: flex;
@@ -158,20 +110,9 @@ tbody td {
     .dashboard-container {
         padding: 0 0;
     }
-    .action{
-        display: flex;
-        flex-direction: column;
-    }
 }
 @media (max-width: 768px) {
-    /* .dashboard-container {
-       display: block;
-    } */
 
-    .action a, .action button {
-        font-size: 12px;
-        padding: 4px 8px;
-    }
     thead th, tbody td {
         padding: 8px;
     }
@@ -197,12 +138,5 @@ tbody td {
         display: flex;
         justify-content: space-between;
         padding: 8px;
-    }
-    .action {
-        display: flex;
-        flex-direction: row;
-    }
-    .action a, .action button {
-       width: 90%;
     }
 }

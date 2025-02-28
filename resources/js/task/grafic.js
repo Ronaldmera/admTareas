@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const ctx = document.getElementById("myChart").getContext("2d");
 
     new Chart(ctx, {
-        type: "pie",
+        type: "doughnut",
         data: {
             labels: ["Completadas", "Pendientes"],
             datasets: [{
                 data: [complete, pending],
-                backgroundColor: ["#3b83f6de", "#9fb6dbde"]
+                backgroundColor: ["#28a745", "#19a7bd"]
             }]
         }
     });
