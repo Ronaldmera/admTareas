@@ -11,55 +11,66 @@
         </p>
     </div>
 
-
     <div class="dashboard-container">
-        <div class="pending-tasks">
-            <h2> Tareas Pendientes</h2>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Descripción</th>
-                            <th>Estado</th>
-                            <th>Fecha de Creación</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if ($pendingTasks->isEmpty())
+        <div class="left">
+            <div class="pending-tasks">
+                <h2> Tareas Pendientes</h2>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
                             <tr>
-                                <td class="msj-task-empty" colspan="5">¡No hay tareas pendientes!</td>
+                                <th>Título</th>
+                                <th>Descripción</th>
+                                <th>Estado</th>
+                                <th>Fecha de Creación</th>
                             </tr>
-                        @else
-                            @foreach ($pendingTasks as $pendingTask)
+                        </thead>
+                        <tbody>
+                            @if ($pendingTasks->isEmpty())
                                 <tr>
-
-                                    @csrf
-
-                                    <td class="item"><a href="https://fonts.google.com/">{{ $pendingTask->title }}</a>
-                                    </td>
-                                    <td class="content">{{ $pendingTask->content }}</td>
-                                    <td>{{ $pendingTask->status }}</td>
-                                    <td> {{ $pendingTask->created_at->format('d-m-Y') }}</td>
-                                    </form>
-
+                                    <td class="msj-task-empty" colspan="5">¡No hay tareas pendientes!</td>
                                 </tr>
-                            @endforeach
-                        @endif
-                    </tbody>
-                </table>
+                            @else
+                                @foreach ($pendingTasks as $pendingTask)
+                                    <tr>
+                                        <td class="item">
+                                            <a href="https://fonts.google.com/">{{ $pendingTask->title }}</a>
+                                        </td>
+                                        <td class="content">{{ $pendingTask->content }}</td>
+                                        <td>{{ $pendingTask->status }}</td>
+                                        <td>{{ $pendingTask->created_at->format('d-m-Y') }}</td>
+                                    </tr>
+                                @endforeach
+                            @endif
+                        </tbody>
+                    </table>
+
+                    <!-- Paginación -->
+                    <div class="pagination">
+                        {{ $pendingTasks->links('pagination::bootstrap-4') }}
+                    </div>
+
+                </div>
 
             </div>
+            <div class="note">
+                <p><strong>Nota: </strong>Solo se visualizan un máximo de 10 tareas pendientes. Para ver más, navega entre
+                    las páginas.
+                </p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="grafic">
+                <h2>Diagrama</h2>
+                <canvas id="myChart"></canvas>
+                <p class="tasks-empty">Aún no hay tareas para realizar la gráfica</p>
+            </div>
+        </div>
+    </div> <!-- Cierre de dashboard-container -->
 
-        </div>
-        <div class="grafic">
-            <h2>Diagrama</h2>
-            <canvas id="myChart"></canvas>
-            <p class="tasks-empty">Aún no hay tareas para realizar la gráfica</p>
-        </div>
-    </div>
     <script>
         var pending = @json($pending);
         var complete = @json($complete);
     </script>
+
 @endsection
