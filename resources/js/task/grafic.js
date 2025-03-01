@@ -12,3 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+//si no hay tareas muestra el mensaje de: no hay tareas para realizar la grafica
+let msjEmpty = document.querySelector('.tasks-empty');
+    if(complete === 0 && pending === 0){
+    msjEmpty.style.display = "flex";
+}

@@ -3,8 +3,33 @@
     display: flex;
     flex-direction: row;
     padding: 0 12%;
-    align-items: center;
+    /* align-items: center; */
     gap: 5%;
+    justify-content: space-around;
+}
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.msg{
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.616);
+    font-weight:300;
+    text-shadow: 2px 1px 1px #6e99df79;
+}
+.img{
+    display: flex;
+    max-width: 200px;
+
+}
+.link-flaticon a{
+    color: gray;
 }
 #myChart {
     max-width: 400px;
@@ -17,7 +42,7 @@
 .dashboard-title {
     width: 100%;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-top: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #3b83f6de;
@@ -61,7 +86,7 @@
 }
 
 .dashboard-container thead {
-    background: #f8f9fa;
+    background: #e4eef8;
     color: #4e89e7de;
     text-align: center;
 }
@@ -96,6 +121,11 @@
 }
 .grafic h2{
     margin-bottom: 0.3rem;
+}
+.tasks-empty{
+    display: none;
+    position: relative;
+    bottom: 220px;
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {

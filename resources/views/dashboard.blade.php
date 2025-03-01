@@ -1,8 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-
     <h1 class="dashboard-title">Bienvenido, {{ auth()->user()->name }}!</h1>
+    <div class="welcome">
+        <p class="msg">Aquí puedes gestionar tus tareas de manera eficiente y visualizar tu progreso.</p>
+        <img class="img" src="{{ asset('images/dashboard/listaTareas.gif') }}" alt="imagen de tareas">
+        <p class="link-flaticon">
+            <a href="https://www.flaticon.es/iconos-animados-gratis/bloc" title="bloc iconos animados">Bloc iconos animados
+                creados por Freepik - Flaticon</a>
+        </p>
+    </div>
+
+
     <div class="dashboard-container">
         <div class="pending-tasks">
             <h2> Tareas Pendientes</h2>
@@ -19,7 +28,7 @@
                     <tbody>
                         @if ($pendingTasks->isEmpty())
                             <tr>
-                                <td class="msj-task-empty" colspan="5">No hay tareas disponibles</td>
+                                <td class="msj-task-empty" colspan="5">¡No hay tareas pendientes!</td>
                             </tr>
                         @else
                             @foreach ($pendingTasks as $pendingTask)
@@ -46,6 +55,7 @@
         <div class="grafic">
             <h2>Diagrama</h2>
             <canvas id="myChart"></canvas>
+            <p class="tasks-empty">Aún no hay tareas para realizar la gráfica</p>
         </div>
     </div>
     <script>

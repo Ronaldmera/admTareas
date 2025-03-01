@@ -12,8 +12,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
-
     @vite(['resources/css/nav/style.css'])
     @vite(['resources/css/global.css'])
     @vite(['resources/css/footer/style.css'])
