@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    <div class="resume">
+    <div class="resume" data-aos="fade">
         <h2>Resumen de Tareas</h2>
         <div class="cards">
             <div class="item-card">

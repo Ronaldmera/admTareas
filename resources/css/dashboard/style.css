@@ -83,13 +83,6 @@
 .link-flaticon a{
     color: gray;
 }
-/*contenedor de la grafica*/
-#myChart {
-    max-width: 400px;
-    max-height: 400px;
-    margin: auto;
-    display: block;
-}
 /*mensaje que se activa al no haber tareas*/
 .msj-task-empty{
     text-align: center;
@@ -174,6 +167,13 @@
 }
 .grafic h2{
     margin-bottom: 2rem;
+}
+/*contenedor de la grafica*/
+#myChart {
+    max-width: 400px;
+    max-height: 400px;
+    margin: auto;
+    display: block;
 }
 .tasks-empty{
     display: none;
@@ -272,35 +272,74 @@
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
+    .text-welcome{
+        top: 0px;
+    }
     .dashboard-container {
         display: flex;
         flex-direction: column;
         padding: 0 5%;
     }
+
 }
 
 @media (max-width: 1024px){
+    .text-welcome{
+        top: 0px;
+    }
+    .text-welcome .dashboard-title{
+        font-size: 3.5rem;
+    }
+    .text-welcome .msg{
+        padding: 0 20px;
+        font-size: 2.2rem;
+    }
     .dashboard-container {
         padding: 0 0;
         display: flex;
         flex-direction: column;
     }
+
 }
 @media (max-width: 768px) {
-
-    thead th, tbody td {
-        padding: 8px;
+    .text-welcome .dashboard-title{
+        font-size: 3rem;
     }
-    .left{
+
+    .dashboard-container {
         display: flex;
         flex-direction: column;
-        padding: 0 0px 50px;
-        background-color: #edf1f5af;
-        border-radius: 12px;
+        padding: 0 0%;
+    }
+
+    thead {
+        display: none;
+    }
+    tbody tr {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        margin: 0px 0px 10px;
+    }
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
     }
 }
 
 @media (max-width: 480px) {
+    .text-welcome .dashboard-title{
+        font-size: 2.7rem;
+    }
+    .text-welcome .msg{
+        padding: 0 20px;
+        font-size: 1.8rem;
+    }
+    .subtitle-general-summary{
+        font-size: 2.2rem;
+    }
     .dashboard-container {
         display: flex;
         flex-direction: column;
@@ -320,5 +359,43 @@
         display: flex;
         justify-content: space-between;
         padding: 8px;
+    }
+    .note p{
+        font-size: 15px;
+    }
+    #myChart {
+        max-width: 240px;
+    }
+    .grafic{
+        font-size: 1rem;
+        margin-top: 22px;
+    }
+    .grafic h2{
+        margin-bottom: 1rem;
+    }
+    .resume h2{
+        font-size: 2.2rem;
+    }
+    .resume .cards{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    .cards .item-card{
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        width: 100%;
+        padding: 10px;
+    }
+    .item-card img{
+        height: 30%;
+    }
+    .item-card h3{
+        font-size: 1.2rem;
+    }
+    .item-card p{
+        font-size: 1.1rem;
     }
 }
