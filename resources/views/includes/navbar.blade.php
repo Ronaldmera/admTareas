@@ -16,7 +16,7 @@
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="logout-btn">
-                            <img src="{{ asset('images/logout/exit.svg') }}" alt="Cerrar sesión" class="logout-img">
+                            <img src="{{ asset('images/logout/logout.svg') }}" alt="Cerrar sesión" class="logout-img">
                         </button>
                     </form>
                 </li>

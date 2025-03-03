@@ -1,10 +1,68 @@
+/*contenedor padre de la imagen*/
 .hero{
     display: flex;
     position: relative;
+    height: auto;
 }
+/*contenedor de las imagenes en diferente tamaño*/
+.picture{
+    display: flex;
+    height: auto;
+    opacity: 0.8;
+}
+/*imagen de fondo*/
+.picture img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(20%) brightness(90%);
+    object-fit: cover;
+    min-height: 90vh;
+    /*hace que la imagen ocupe toda la pantalla en todos los dispositivos*/
+}
+/*contenedor del texto de bienvenida*/
 .text-welcome{
+    display: flex;
+    flex-direction: column;
     position: absolute;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    bottom: 100px;
 }
+/* Título principal con el nombre */
+.dashboard-title {
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    /* margin-top: 30px; */
+    position: relative;
+    bottom: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* color: #3b83f6de; */
+    color:#10749e;
+}
+/*mesaje debajo del nombre*/
+.msg{
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    /* margin-top: 50px; */
+    margin-bottom: 20px;
+    color: #0c3740;
+    font-weight:300;
+    text-shadow: 1px 1px 1px #10749e;
+}
+.subtitle-general-summary{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* background-color: #007bff; */
+    justify-content: center;
+    display: flex;
+    font-size: 3rem;
+    padding: 20px;
+    color: #74B3CE;
+}
+
 /* Contenedor principal */
 .dashboard-container {
     display: flex;
@@ -13,51 +71,36 @@
     /* align-items: center; */
     gap: 5%;
     justify-content: space-around;
-}
-
-.welcome{
-    display: flex;
-    flex-direction: column;
+    /* background-color: #007bff; */
     align-items: center;
 }
-.msg{
-    font-size: 2.5rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    color: rgba(0, 0, 0, 0.616);
-    font-weight:300;
-    text-shadow: 2px 1px 1px #6e99df79;
-}
+
+/*gif de tareas en movimiento*/
 .img{
     display: flex;
     max-width: 200px;
-
 }
 .link-flaticon a{
     color: gray;
 }
+/*contenedor de la grafica*/
 #myChart {
     max-width: 400px;
     max-height: 400px;
     margin: auto;
     display: block;
 }
-
-/* Título principal */
-.dashboard-title {
-    width: 100%;
-    text-align: center;
-    font-size: 3rem;
-    margin-top: 30px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #3b83f6de;
-}
 /*mensaje que se activa al no haber tareas*/
 .msj-task-empty{
     text-align: center;
     color: red;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 90px;
+    background-color: #edf1f5af;
+    border-radius: 12px;
 }
 /* Contenedor de tareas pendientes */
 .pending-tasks {
@@ -68,6 +111,7 @@
     /* border: 2px solid #3b83f64f; */
     border-radius: 20px;
     padding: 20px;
+    max-width: 1000px;
 }
 
 /* Título de la sección de tareas */
@@ -105,6 +149,7 @@
 
 .dashboard-container tbody tr {
     border-bottom: 1px solid #ddd;
+    background-color: whitesmoke;
 }
 
 .dashboard-container tbody tr:last-child {
@@ -115,6 +160,7 @@
     padding: 12px;
     color: #555;
     border-right: 1px solid #55555528;
+    border-left: 1px solid #55555528;
 }
 
 .grafic{
@@ -127,7 +173,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .grafic h2{
-    margin-bottom: 0.3rem;
+    margin-bottom: 2rem;
 }
 .tasks-empty{
     display: none;
@@ -152,7 +198,8 @@
     text-decoration: none;
     color: #007bff;
     border-radius: 4px;
-    border: 1px solid #007bff;
+    /* border: 1px solid #007bff; */
+    background-color: #d1d1d16c;
 }
 .pagination a[rel="prev"],
 .pagination a[rel="next"],
@@ -160,6 +207,7 @@
     color: black; /* Cambia el color de los símbolos */
     font-size: 1.5rem; /* Ajusta el tamaño si es necesario */
     font-weight:bold;
+    background-color: #D1D1D1;
 }
 
 .pagination .active span {
@@ -170,6 +218,57 @@
     margin-top: 20px;
     font-size: 1.2rem;
     text-align: center;
+}
+.resume{
+    margin-top: 100px;
+    padding-bottom: 150px;
+}
+.resume h2{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    display: flex;
+    font-size: 3rem;
+    padding: 20px;
+    color: #74B3CE;
+}
+.resume .cards{
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+.cards .item-card{
+    display: flex;
+    flex-direction: column;
+    background-color: #dfe6ee88;
+    height: 300px;
+    width: 300px;
+    padding: 30px;
+    border-radius: 40px;
+    text-align: center;
+    justify-content: space-evenly;
+    transition: transform 0.3s ease;
+    box-shadow: 1px 2px 10px  rgb(174, 202, 243);
+
+
+}
+.cards .item-card:hover{
+     box-shadow: 1px 2px 10px  gray;
+    transform: scale(1.02);
+
+}
+.item-card img{
+    height: 30%;
+}
+.item-card h3{
+    /* margin-top: 30px; */
+    font-size: 1.4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.item-card p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #14a9e9;
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
@@ -183,12 +282,21 @@
 @media (max-width: 1024px){
     .dashboard-container {
         padding: 0 0;
+        display: flex;
+        flex-direction: column;
     }
 }
 @media (max-width: 768px) {
 
     thead th, tbody td {
         padding: 8px;
+    }
+    .left{
+        display: flex;
+        flex-direction: column;
+        padding: 0 0px 50px;
+        background-color: #edf1f5af;
+        border-radius: 12px;
     }
 }
 
