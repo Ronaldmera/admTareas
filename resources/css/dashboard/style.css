@@ -73,6 +73,7 @@
     justify-content: space-around;
     /* background-color: #007bff; */
     align-items: center;
+    height: auto;
 }
 
 /*gif de tareas en movimiento*/
@@ -95,6 +96,7 @@
     background-color: #edf1f5af;
     border-radius: 12px;
 }
+
 /* Contenedor de tareas pendientes */
 .pending-tasks {
     display: flex;
@@ -112,6 +114,7 @@
     text-align: center;
     margin-bottom: 2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #172a3a;
 }
 
 /* Tabla de tareas */
@@ -130,8 +133,8 @@
 }
 
 .dashboard-container thead {
-    background: #e4eef8;
-    color: #4e89e7de;
+    background:#172a3a;
+    color: whitesmoke;
     text-align: center;
 }
 
@@ -142,7 +145,7 @@
 
 .dashboard-container tbody tr {
     border-bottom: 1px solid #ddd;
-    background-color: whitesmoke;
+    background-color: #FFFFFF;
 }
 
 .dashboard-container tbody tr:last-child {
@@ -151,9 +154,13 @@
 
 .dashboard-container tbody td {
     padding: 12px;
-    color: #555;
+    color: #202020;
+    background-color: #FFFFFF;
     border-right: 1px solid #55555528;
     border-left: 1px solid #55555528;
+}
+.task-title a{
+    color: #4091e9;
 }
 
 .grafic{
@@ -167,6 +174,7 @@
 }
 .grafic h2{
     margin-bottom: 2rem;
+      color: #172a3a;
 }
 /*contenedor de la grafica*/
 #myChart {
@@ -196,7 +204,7 @@
     display: inline-block;
     padding: 3px;
     text-decoration: none;
-    color: #007bff;
+    color: #172a3a;
     border-radius: 4px;
     /* border: 1px solid #007bff; */
     background-color: #d1d1d16c;
@@ -204,14 +212,15 @@
 .pagination a[rel="prev"],
 .pagination a[rel="next"],
 .pagination span[aria-hidden="true"] {
-    color: black; /* Cambia el color de los símbolos */
-    font-size: 1.5rem; /* Ajusta el tamaño si es necesario */
+    color: #f3f5f5; /* Cambia el color de los símbolos */
+    font-size: 1.5rem;
     font-weight:bold;
-    background-color: #D1D1D1;
+    width: 20px;
+    background-color: #8f8d8d;
 }
 
 .pagination .active span {
-    color: rgb(255, 80, 80);
+    color:#14a9e9;
 }
 .note p{
     font-family:Arial, Helvetica, sans-serif;
@@ -312,20 +321,30 @@
         padding: 0 0%;
     }
 
-    thead {
+    .dashboard-container thead {
         display: none;
     }
-    tbody tr {
+    .dashboard-container tbody{
+        display: flex;
+        flex-direction: column;
+        background-color: #F0F4F8;
+        gap: 0px;
+    }
+    .dashboard-container tbody tr {
         display: flex;
         flex-direction: column;
         padding: 10px;
+        border-top: 1px solid #ddd;
         border-bottom: 1px solid #ddd;
-        margin: 0px 0px 10px;
+        /* margin: 0px 0px 10px; */
+        margin-bottom: 10px;
     }
-    tbody td {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px;
+    .dashboard-container tbody td {
+        padding: 12px;
+        color: #555;
+        background-color: #FFFFFF;
+        border-right: none;
+        border-left: none;
     }
 }
 

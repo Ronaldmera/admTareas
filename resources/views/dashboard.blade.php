@@ -48,7 +48,7 @@
                             @else
                                 @foreach ($pendingTasks as $pendingTask)
                                     <tr>
-                                        <td class="item">
+                                        <td class="task-title">
                                             <a href="https://fonts.google.com/">{{ $pendingTask->title }}</a>
                                         </td>
                                         <td class="content">{{ $pendingTask->content }}</td>
