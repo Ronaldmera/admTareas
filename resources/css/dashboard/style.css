@@ -159,7 +159,11 @@
     border-right: 1px solid #55555528;
     border-left: 1px solid #55555528;
 }
-.task-title a{
+ tbody #pending{
+    color:#E57373;
+    font-weight: bolder;
+ }
+ .task-title a{
     color: #4091e9;
 }
 
@@ -249,7 +253,7 @@
 .cards .item-card{
     display: flex;
     flex-direction: column;
-    background-color: #dfe6ee88;
+    background-color: #FFFFFF;
     height: 300px;
     width: 300px;
     padding: 30px;

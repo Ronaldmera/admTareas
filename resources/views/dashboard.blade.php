@@ -52,7 +52,7 @@
                                             <a href="https://fonts.google.com/">{{ $pendingTask->title }}</a>
                                         </td>
                                         <td class="content">{{ $pendingTask->content }}</td>
-                                        <td>{{ $pendingTask->status }}</td>
+                                        <td id="pending">{{ $pendingTask->status }}</td>
                                         <td>{{ $pendingTask->created_at->format('d-m-Y') }}</td>
                                     </tr>
                                 @endforeach
