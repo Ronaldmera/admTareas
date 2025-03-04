@@ -15,15 +15,6 @@
         </div>
 
     </div>
-    {{--
-    <div class="welcome">
-
-        <img class="img" src="{{ asset('images/dashboard/listaTareas.gif') }}" alt="imagen de tareas">
-        <p class="link-flaticon">
-            <a href="https://www.flaticon.es/iconos-animados-gratis/bloc" title="bloc iconos animados">Bloc iconos animados
-                creados por Freepik - Flaticon</a>
-        </p>
-    </div> --}}
     <h2 class="subtitle-general-summary" data-aos="fade">Resumen General</h2>
 
     <div class="dashboard-container" data-aos="fade">
