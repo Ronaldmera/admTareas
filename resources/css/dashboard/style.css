@@ -398,6 +398,7 @@
     }
     .resume h2{
         font-size: 2.2rem;
+        text-align: center;
     }
     .resume .cards{
         display: flex;

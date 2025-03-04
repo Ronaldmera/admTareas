@@ -5,7 +5,7 @@
         <picture class="picture">
             <source media="(min-width: 1200px)" srcset="{{ asset('images/dashboard/fondo-grande.jpg') }}">
             <source media="(min-width: 600px)" srcset="{{ asset('images/dashboard/fondo-mediano.jpg') }}">
-            <img src="{{ asset('images/dashboard/fondo-pequeño.jpg') }}" alt="Fondo adaptable">
+            <img src="{{ asset('images/dashboard/fondo-movil.jpg') }}" alt="Fondo adaptable">
         </picture>
         <div class="text-welcome">
             <h1 class="dashboard-title" id="typing-title"></h1>
