@@ -18,9 +18,9 @@
     flex-direction: column;
     font-size: 1.2rem;
     margin-top: 3rem;
-    border: 2px solid #3b83f64f;
     border-radius: 20px;
     padding: 20px;
+    margin-bottom: 10vh;
 }
 /* Título de la sección de tareas */
 .all-tasks h2 {
@@ -37,19 +37,41 @@
     border-collapse: collapse;
     font-family: Arial, sans-serif;
     background: white;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    table-layout: fixed;
 }
 .tasks-container thead {
-    background: #f8f9fa;
-    color: #333;
+    background: #172A3A;
+    color: whitesmoke;
     text-align: left;
 }
 .tasks-container thead th {
     padding: 12px;
     font-weight: bold;
 }
+/*modificando el ancho de cada encabezado*/
+.tasks-container thead th.title {
+    width: 20%;
+}
+
+.tasks-container thead th.content {
+    width: 35%;
+}
+
+.tasks-container thead th.status {
+    width: 10%;
+}
+
+.tasks-container thead th.date {
+    width: 10%;
+}
+
+.tasks-container thead th.action {
+    width: 25%;
+}
+
 .tasks-container tbody tr {
     border-bottom: 1px solid #ddd;
 }
@@ -58,15 +80,27 @@
 }
 .tasks-container tbody td {
     padding: 12px;
-    color: #555;
+    color: black;
+    background-color: #FFFFFF;
     border-right: 1px solid #55555528;
+    /* max-width: 90ch; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
 }
-.action{
+
+/*alineando td de satus y fecha*/
+.tasks-container tbody #status, #date{
+    text-align: center;
+}
+/*contenedor de las acciones*/
+#action{
     display: flex;
     align-items: center;
     height: 100%;
 }
-.action a, .action button {
+#action a, #action button {
     text-decoration: none;
     border: none;
     padding: 6px 10px;
@@ -79,38 +113,83 @@
     transition: background 0.3s ease-in-out;
     text-align: center;
 }
-.action form {
+#action form {
     display: inline-block; /* Hace que el formulario no afecte el botón */
     width: 100%;
 }
-.action form button {
+#action form button {
     width: 100%;
 }
-.action a:nth-child(1) {
+#action a:nth-child(1) {
     background: #17a2b8;
 }
-.action a:nth-child(1):hover {
+#action a:nth-child(1):hover {
     background: #138496;
 }
-.action a:nth-child(2) {
+#action a:nth-child(2) {
     background: #28a745;
 }
 
-.action a:nth-child(2):hover {
+#action a:nth-child(2):hover {
     background: #218838;
 }
-.action form button {
+#action form button {
     background: #dc3545;
 }
-.action form button:hover {
+#action form button:hover {
     background: #c82333;
 }
-
+/* Contenedor del botón flotante */
+.container-add-task {
+    position: fixed;
+    bottom: 10vh;
+    right: 5vw;
+    z-index: 2;
+}
+/* Estilo del botón flotante */
+.item-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #383433;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.item-add:hover {
+    background-color: #1b1817;
+    transform: scale(1.1);
+}
+.item-add a{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+.item-add img {
+    width: 100%;
+    height: 60px;
+}
+.total{
+  margin-top: 20px;
+}
 @media (min-width: 1024px) and (max-width: 1440px) {
     .tasks-container {
         display: flex;
         flex-direction: column;
-        padding: 0 5%;
+        padding: 0 0%;
+    }
+    .tasks-container thead th {
+        font-size: 17px;
+    }
+    .tasks-container thead th.date {
+        width: 11%;
+    }
+    #action a, #action button {
+        font-size: 12px;
     }
 }
 
@@ -118,22 +197,57 @@
     .tasks-container {
         padding: 0 0;
     }
-    .action{
-        display: flex;
-        flex-direction: column;
+    .tasks-container thead th {
+        font-size: 15px;
+        padding: 5px;
     }
-}
-@media (max-width: 768px) {
-    .tasks-container {
-       display: block;
+    .tasks-container tbody td {
+        padding: 12px;
+        font-size: 15px;
+    }
+    .all-tasks{
+        padding: 10px;
+    }
+    #action a, #action button {
+        margin: 1px;
+        font-size: 11px;
     }
 
-    .action a, .action button {
-        font-size: 12px;
-        padding: 4px 8px;
+}
+/*......*/
+@media (max-width: 768px) {
+    .tasks-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 4%;
     }
-    .tasks-container thead th, tbody td {
-        padding: 8px;
+    .tasks-container thead {
+        display: none;
+    }
+    .tasks-container tbody{
+        display: flex;
+        flex-direction: column;
+        background-color: #F6FBFF;
+        gap: 0px;
+    }
+    .tasks-container tbody tr {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        background-color: #FFFFFF;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .tasks-container tbody td {
+        border-right: none;
+        border-left: none;
+    }
+    .action{
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
     }
 }
 
@@ -143,26 +257,10 @@
         flex-direction: column;
         padding: 0 0%;
     }
-
-    .tasks-container thead {
-        display: none;
-    }
-    .tasks-container tbody tr {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
-    }
     .tasks-container tbody td {
         display: flex;
         justify-content: space-between;
         padding: 8px;
-        border-left: 1px solid #55555528;
-
-    }
-    .action {
-        display: flex;
-        flex-direction: row;
     }
     .action a, .action button {
        width: 90%;

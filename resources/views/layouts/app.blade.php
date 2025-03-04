@@ -32,6 +32,7 @@
     @vite(['resources/js/task/taskDelete.js'])
     @vite(['resources/js/task/grafic.js'])
     @vite(['resources/js/dashboard/welcomeTextAnimation.js'])
+    @vite(['resources/js/task/colorTaskStatus.js'])
 
 </head>
 

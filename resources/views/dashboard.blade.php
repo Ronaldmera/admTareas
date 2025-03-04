@@ -50,7 +50,6 @@
                             @endif
                         </tbody>
                     </table>
-
                     <!-- Paginación -->
                     <div class="pagination">
                         {{ $pendingTasks->links('pagination::bootstrap-4') }}

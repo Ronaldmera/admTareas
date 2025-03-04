@@ -13,11 +13,11 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Título</th>
-                            <th>Descripción</th>
-                            <th>Estado</th>
-                            <th>Fecha de Creación</th>
-                            <th>Acciones</th>
+                            <th class="title">Título</th>
+                            <th class="content">Descripción</th>
+                            <th class="status">Estado</th>
+                            <th class="date">Fecha de Creación</th>
+                            <th class="action">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,11 +28,11 @@
                         @else
                             @foreach ($tasks as $task)
                                 <tr>
-                                    <td class="item">{{ $task->title }}</td>
-                                    <td class="content">{{ $task->content }}</td>
-                                    <td>{{ $task->status }}</td>
-                                    <td>{{ $task->created_at->format('d-m-Y') }}</td>
-                                    <td class="action">
+                                    <td>{{ $task->title }}</td>
+                                    <td>{{ $task->content }}</td>
+                                    <td id="status">{{ $task->status }}</td>
+                                    <td id="date">{{ $task->created_at->format('d-m-Y') }}</td>
+                                    <td id="action">
                                         <a href="{{ route('task.create', $task->id) }}">Mostrar</a>
                                         <a href="{{ route('task.create', $task->id) }}">Editar</a>
                                         <form class="delete" action="{{ route('task.destroy', $task->id) }}" method="POST">
@@ -45,8 +45,27 @@
                             @endforeach
                         @endif
                     </tbody>
+
                 </table>
+                <!-- Paginación -->
+                <div class="pagination">
+                    {{ $tasks->links('pagination::bootstrap-4') }}
+                    <p class="total">Mostrando {{ $tasksShown }} tareas de {{ $tasksTotal }}</p>
+                </div>
+
             </div>
         </div>
     </div>
+    <div class="container-add-task">
+        <div class="item-add">
+            <a href="">
+
+                <img src="{{ asset('images/task/add_task_ico.svg') }}" alt="icono agregar tarea">
+            </a>
+
+        </div>
+    </div>
+    <script>
+        let taskStatus = @json($tasks->pluck('status'));
+    </script>
 @endsection
