@@ -25,3 +25,16 @@ var titleText = `¡Bienvenido, ${userName}!`;
         }
 
         typeEffectTitle(); // Iniciar animación
+
+
+//mustra el texto aparte se no hay tareas para realizar la grafica
+let txt = document.querySelector('#tasks-empty');
+let containerGrafic = document.querySelector('.grafic');
+
+if (pending === 0 && complete === 0) {
+    txt.style.display = "flex";
+   containerGrafic.classList.add('grafic-empty')
+} else {
+    txt.style.display = "none";
+    containerGrafic.classList.remove('grafic-empty');
+}

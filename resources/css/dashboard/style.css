@@ -151,6 +151,11 @@
     font-size: 1.2rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+/*estilos grafica cuando no hayan tareas*/
+.grafic-empty{
+    position: relative;
+    top: 0px;
+}
 .grafic h2{
     margin-bottom: 2rem;
       color: #172a3a;
@@ -162,10 +167,9 @@
     margin: auto;
     display: block;
 }
-.tasks-empty{
-    display: none;
+#tasks-empty{
     position: relative;
-    bottom: 220px;
+    bottom: 130px;
 }
 .pagination {
     text-align: center;
@@ -262,6 +266,10 @@
         flex-direction: column;
         padding: 0 5%;
     }
+    .grafic-empty{
+        position: relative;
+        top: 100px;
+    }
 }
 
 @media (max-width: 1024px){
@@ -282,6 +290,10 @@
     }
     .subtitle-general-summary {
         font-size: 2.8rem;
+    }
+    .grafic-empty{
+        position: relative;
+        top: 100px;
     }
     .resume h2{
         font-size: 2.8rem;

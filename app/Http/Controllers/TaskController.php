@@ -8,9 +8,12 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     public function index(){//obtiene todas las tareas y las pagina en 10
-        $tasksTotal = Task::all()->count();
-        $tasks = Task::paginate(10);
+        $user = auth()->user(); // Obtener el usuario autenticado
+
+        $tasksTotal = Task::where('user_id', $user->id)->count();
+        $tasks = Task::where('user_id',$user->id)->paginate(10);
         $tasksShown = ($tasks->currentPage() - 1) * $tasks->perPage() + $tasks->count(); // Calcula tareas mostradas hasta la página actual
+
         return view('task.list', compact('tasks','tasksTotal', 'tasksShown'));
     }
     public function create(){

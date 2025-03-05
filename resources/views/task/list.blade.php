@@ -1,11 +1,8 @@
 @extends('layouts.app')
-
+@section('styles')
+    @vite(['resources/css/task/style.css'])
+@endsection
 @section('content')
-    <!-- Si el usuario borra una tarea, se activa este if y muestra una animación de borrado adecuada -->
-    @if (session('delete') == 'ok')
-        @vite(['resources/js/task/msjTaskDelete.js'])
-    @endif
-
     <div class="tasks-container">
         <div class="all-tasks">
             <h2 class="title"> Todas las Tareas</h2>
@@ -59,13 +56,25 @@
     <div class="container-add-task">
         <div class="item-add">
             <a href="">
-
                 <img src="{{ asset('images/task/add_task_ico.svg') }}" alt="icono agregar tarea">
             </a>
-
         </div>
     </div>
-    <script>
-        let taskStatus = @json($tasks->pluck('status'));
-    </script>
+    @push('scripts')
+        <!-- Si el usuario borra una tarea, se activa este if y muestra una animación de borrado adecuada -->
+        @if (session('delete') == 'ok')
+            @vite(['resources/js/task/msjTaskDelete.js'])
+        @endif
+
+        @vite(['resources/js/task/taskDelete.js'])
+        @vite(['resources/js/task/colorTaskStatus.js'])
+        <!-- scripts SweetAlert libreria-->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+            let taskStatus = @json($tasks->pluck('status'));
+        </script>
+    @endpush
+
 @endsection

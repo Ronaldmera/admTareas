@@ -9,9 +9,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        // Obtener solo las últimas 10 tareas pendientes
-        $tasks = Task::where('status', 'pendiente')
-            ->orderBy('created_at','asc')
+        $user = auth()->user();
+
+        // Obtener solo las últimas 10 tareas pendientes del usuario autenticado
+        $tasks = Task::where('user_id', $user->id)
+            ->where('status', 'pendiente')
+            ->orderBy('created_at', 'asc')
             ->limit(10)
             ->get();
 
@@ -25,12 +28,9 @@ class DashboardController extends Controller
         );
 
         // Contadores de tareas completadas y pendientes
-        $complete = Task::where('status', 'completada')->count();
-        $pending = Task::where('status', 'pendiente')->count();
+        $complete = Task::where('user_id', $user->id)->where('status', 'completada')->count();
+        $pending = Task::where('user_id', $user->id)->where('status', 'pendiente')->count();
 
         return view('dashboard', compact('pendingTasks', 'pending', 'complete')); // Enviar datos a la vista
     }
-
-
-
 }

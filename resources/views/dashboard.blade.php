@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('styles')
+    @vite(['resources/css/dashboard/style.css'])
+@endsection
 
 @section('content')
     <div class="hero" data-aos="fade">
@@ -68,7 +71,7 @@
             <div class="grafic">
                 <h2>Diagrama</h2>
                 <canvas id="myChart"></canvas>
-                <p class="tasks-empty">Aún no hay tareas para realizar la gráfica</p>
+                <p id="tasks-empty">Aún no hay tareas para realizar la gráfica</p>
             </div>
         </div>
     </div>
@@ -87,11 +90,19 @@
             </div>
         </div>
     </div>
-    <!-- Estas variables pasan datos de php a JS por medio de formato Json-->
-    <script>
-        var pending = @json($pending);
-        var complete = @json($complete);
-        var userName = @json(auth()->user()->name);
-    </script>
+    @push('scripts')
+        <!-- scripts ChartArt libreria-->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+        @if ($pendingTasks->isNotEmpty())
+            @vite(['resources/js/task/grafic.js'])
+        @endif
+        @vite(['resources/js/dashboard/welcomeTextAnimation.js'])
+        <!-- Estas variables pasan datos de php a JS por medio de formato Json-->
+        <script>
+            let pending = @json($pending);
+            let complete = @json($complete);
+            let userName = @json(auth()->user()->name);
+        </script>
+    @endpush
 @endsection
