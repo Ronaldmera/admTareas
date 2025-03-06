@@ -55,10 +55,29 @@
     </div>
     <div class="container-add-task">
         <div class="item-add">
-            <a href="">
-                <img src="{{ asset('images/task/add_task_ico.svg') }}" alt="icono agregar tarea">
-            </a>
+            <img src="{{ asset('images/task/add_task_ico.svg') }}" alt="icono agregar tarea">
         </div>
+    </div>
+    <div class="modal-create-task">
+        <!-- From Uiverse.io by Yaya12085 -->
+        <form class="form" action="{{ route('task.store') }}" method="POST">
+            @csrf
+            <div class="title-form">Agregar Tarea</div>
+            <input type="text" class="title" placeholder="Título" name="title" required>
+            <textarea class="content" placeholder="Describe tu tarea aquí" name="content" required></textarea>
+            <select name="status" id="status-option" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="pendiente">Pendiente</option>
+                <option value="completada">Completada</option>
+            </select>
+
+            <div class="options-modal">
+                <button type="button" class="btn-close-modal">cancelar</button>
+                <button type="submit">Crear Tarea</button>
+            </div>
+
+        </form>
+
     </div>
     @push('scripts')
         <!-- Si el usuario borra una tarea, se activa este if y muestra una animación de borrado adecuada -->
@@ -68,6 +87,7 @@
 
         @vite(['resources/js/task/taskDelete.js'])
         @vite(['resources/js/task/colorTaskStatus.js'])
+        @vite(['resources/js/task/modalAddTask.js'])
         <!-- scripts SweetAlert libreria-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

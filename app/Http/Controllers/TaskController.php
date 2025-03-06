@@ -11,13 +11,10 @@ class TaskController extends Controller
         $user = auth()->user(); // Obtener el usuario autenticado
 
         $tasksTotal = Task::where('user_id', $user->id)->count();
-        $tasks = Task::where('user_id',$user->id)->paginate(10);
+        $tasks = Task::where('user_id',$user->id)->orderBy('created_at','desc')->paginate(10);
         $tasksShown = ($tasks->currentPage() - 1) * $tasks->perPage() + $tasks->count(); // Calcula tareas mostradas hasta la página actual
 
         return view('task.list', compact('tasks','tasksTotal', 'tasksShown'));
-    }
-    public function create(){
-     return view('task.create');
     }
     public function store(Request $request){
         $task = new Task();
@@ -26,7 +23,7 @@ class TaskController extends Controller
         $task -> content = $request -> content;
         $task -> status = $request -> status;
         $task -> save();
-        return  view('task.create');
+        return redirect()->route('task.index');
     }
 
     public function show($id){
@@ -37,9 +34,11 @@ class TaskController extends Controller
 
 
     }
-    public function destroy($id){
+    public function destroy(Request $request, $id) {
         $task = Task::find($id);
         $task->delete();
-        return redirect()->route('task.index')->with('delete','ok');
+
+        return redirect()->back()->with('delete', 'ok'); // Regresa a la misma página
     }
+
 }
