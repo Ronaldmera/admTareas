@@ -28,10 +28,10 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Título</th>
-                                <th>Descripción</th>
-                                <th>Estado</th>
-                                <th>Fecha de Creación</th>
+                                <th class="title">Título</th>
+                                <th class="content">Descripción</th>
+                                <th class="status">Estado</th>
+                                <th class="date">Fecha de Creación</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -45,9 +45,9 @@
                                         <td class="task-title">
                                             <a href="https://fonts.google.com/">{{ $pendingTask->title }}</a>
                                         </td>
-                                        <td class="content">{{ $pendingTask->content }}</td>
+                                        <td id="content">{{ $pendingTask->content }}</td>
                                         <td id="pending">{{ $pendingTask->status }}</td>
-                                        <td>{{ $pendingTask->created_at->format('d-m-Y') }}</td>
+                                        <td id="date">{{ $pendingTask->created_at->format('d-m-Y') }}</td>
                                     </tr>
                                 @endforeach
                             @endif
