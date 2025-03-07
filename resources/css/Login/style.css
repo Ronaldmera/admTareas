@@ -12,6 +12,12 @@ main {
     background: -webkit-linear-gradient(90deg, #0462ac, #3880ac, #54bcdc);
     background: linear-gradient(90deg, #0462ac, #3880ac, #54bcdc);
 }
+main .wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 0;
+}
 
 .modern-form {
     --primary: #3b82f6;
@@ -241,7 +247,7 @@ main {
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-    main {
+    /* main {
         padding: 20px;
-    }
+    } */
 }

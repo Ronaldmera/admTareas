@@ -36,6 +36,9 @@
 
 
     <main>
+        <div class="wave">
+            <img src="{{ asset('images/login/wave.svg') }}">
+        </div>
 
         <!-- From Uiverse.io by kyle1dev -->
         <form class="modern-form" action="{{ route('login') }}" method="POST">
