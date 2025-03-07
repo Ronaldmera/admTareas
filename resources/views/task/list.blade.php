@@ -84,6 +84,10 @@
         @if (session('delete') == 'ok')
             @vite(['resources/js/task/msjTaskDelete.js'])
         @endif
+        @if (session('save') == 'ok')
+            <!-- muestra mensaje al crear nueva tarea -->
+            @vite(['resources/js/task/msjSaveTask.js'])
+        @endif
 
         @vite(['resources/js/task/taskDelete.js'])
         @vite(['resources/js/task/colorTaskStatus.js'])

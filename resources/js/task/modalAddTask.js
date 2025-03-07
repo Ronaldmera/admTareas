@@ -6,11 +6,11 @@ let contentTextarea = document.querySelector('textarea[name="content"]'); // Tex
 let statusSelect = document.querySelector('#status-option'); // Select de estado
 
 icoAdd.addEventListener('click', () => {
-    modal.style.display = "flex";
+    modal.classList.add('active');
 });
 
 closeModal.addEventListener('click', () => {
-    modal.style.display = "none";
+    modal.classList.remove('active');
 
     // Limpiar los valores del formulario
     titleInput.value = "";

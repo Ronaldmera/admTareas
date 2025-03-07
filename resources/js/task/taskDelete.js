@@ -11,7 +11,9 @@ $(document).ready(function() {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Sí, eliminar"
+            confirmButtonText: "Sí, eliminar",
+            cancelButtonText: "Cancelar",
+            reverseButtons: true,
         }).then((result) => {
             if (result.isConfirmed) {
                 // Si el usuario confirma, enviamos el formulario

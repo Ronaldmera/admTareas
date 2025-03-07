@@ -23,7 +23,7 @@ class TaskController extends Controller
         $task -> content = $request -> content;
         $task -> status = $request -> status;
         $task -> save();
-        return redirect()->route('task.index');
+        return redirect()->route('task.index')->with('save','ok');
     }
 
     public function show($id){
