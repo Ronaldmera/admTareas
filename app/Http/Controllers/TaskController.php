@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TaskController extends Controller
 {
@@ -20,8 +21,8 @@ class TaskController extends Controller
     public function store(Request $request){
         $task = new Task();
         $task->user_id = auth()->id(); // Obtiene el ID del usuario autenticado
-        $task -> title = $request -> title;
-        $task -> content = $request -> content;
+        $task -> title = Str::ucfirst($request -> title);//convierte la primera letra en maytuscula
+        $task -> content =Str::ucfirst( $request -> content);
         $task -> status = $request -> status;
         $task -> save();
         return redirect()->route('task.index')->with('save','ok');
@@ -36,6 +37,7 @@ class TaskController extends Controller
         return response()->json($task);
     }
     public function update(){
+
 
     }
     public function destroy(Request $request, $id) {
