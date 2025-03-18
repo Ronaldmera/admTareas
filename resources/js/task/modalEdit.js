@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Mostrar el modal de edición
                 const modal = document.getElementById('modal-edit');
                 modal.style.display = "flex";
+                let icoAdd = document.querySelector('.item-add'); // oculta icono de add tarea
+                icoAdd.style.display = "none";
 
             } catch (error) {
                 console.error('Error al cargar la tarea:', error);
@@ -37,6 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Cerrar el modal al hacer clic en el botón de cerrar
     document.querySelector('#modal-edit .btn-close-modal').addEventListener('click', function () {
         document.getElementById('modal-edit').style.display = "none";
+        let icoAdd = document.querySelector('.item-add'); //muestra nuevamente el icono para add tarea
+        icoAdd.style.display = "flex";
     });
 
     // Cerrar el modal al hacer clic fuera del contenido del modal (opcional)

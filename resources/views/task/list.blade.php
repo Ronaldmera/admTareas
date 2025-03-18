@@ -106,7 +106,7 @@
 
                 <div class="options-modal">
                     <button type="button" class="btn-close-modal">Cancelar</button>
-                    <button type="submit">Actualizar Tarea</button>
+                    <button type="submit">Actualizar</button>
                 </div>
             </form>
         </div>
