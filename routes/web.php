@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Task;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 // Route::get('/', function () {
@@ -38,8 +39,13 @@ Route::controller(TaskController::class)->group(function(){
     Route::get('task/create', 'create')->name('task.create');
     Route::post('task/store', 'store')->name('task.store');
     Route::delete('task/{id}', 'destroy')->name('task.destroy');
-
+    Route::get('/task/{id}', 'show')->name('task.show');
 });
+
+
+
+
+
 
 
 

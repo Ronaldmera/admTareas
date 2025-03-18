@@ -30,8 +30,11 @@
                                     <td id="status">{{ $task->status }}</td>
                                     <td id="date">{{ $task->created_at->format('d-m-Y') }}</td>
                                     <td id="action">
-                                        <a href="{{ route('task.create', $task->id) }}">Mostrar</a>
-                                        <a href="{{ route('task.create', $task->id) }}">Editar</a>
+                                        <button class="btn-show-task" data-id="{{ $task->id }}">Mostrar</button>
+
+                                        <button
+                                            onclick="window.location.href='{{ route('task.create', $task->id) }}'">Editar</button>
+
                                         <form class="delete" action="{{ route('task.destroy', $task->id) }}" method="POST">
                                             @csrf
                                             @method('delete')
@@ -58,6 +61,7 @@
             <img src="{{ asset('images/task/add_task_ico.svg') }}" alt="icono agregar tarea">
         </div>
     </div>
+
     <div class="modal-create-task">
         <!-- From Uiverse.io by Yaya12085 -->
         <form class="form" action="{{ route('task.store') }}" method="POST">
@@ -79,6 +83,17 @@
         </form>
 
     </div>
+    <div id="modal-task" class="modal-show">
+        <div class="modal-content">
+            <h2 id="modal-title">Título de la Tarea</h2>
+            <p><span id="modal-description"></span></p>
+            <p><strong>Estado:</strong> <span id="modal-status"></span></p>
+            <p><strong>Fecha de Creación:</strong> <span id="modal-date"></span></p>
+            <button class="close">Cerrar</button>
+        </div>
+    </div>
+
+
     @push('scripts')
         <!-- Si el usuario borra una tarea, se activa este if y muestra una animación de borrado adecuada -->
         @if (session('delete') == 'ok')
@@ -92,6 +107,7 @@
         @vite(['resources/js/task/taskDelete.js'])
         @vite(['resources/js/task/colorTaskStatus.js'])
         @vite(['resources/js/task/modalAddTask.js'])
+        @vite(['resources/js/task/modalShowTask.js'])
         <!-- scripts SweetAlert libreria-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

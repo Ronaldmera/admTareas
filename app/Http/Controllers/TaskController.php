@@ -13,8 +13,9 @@ class TaskController extends Controller
         $tasksTotal = Task::where('user_id', $user->id)->count();
         $tasks = Task::where('user_id',$user->id)->orderBy('created_at','desc')->paginate(10);
         $tasksShown = ($tasks->currentPage() - 1) * $tasks->perPage() + $tasks->count(); // Calcula tareas mostradas hasta la página actual
+        $taskShow = null; // Definir por defecto
 
-        return view('task.list', compact('tasks','tasksTotal', 'tasksShown'));
+        return view('task.list', compact('tasks','tasksTotal', 'tasksShown','taskShow'));
     }
     public function store(Request $request){
         $task = new Task();
@@ -26,12 +27,15 @@ class TaskController extends Controller
         return redirect()->route('task.index')->with('save','ok');
     }
 
-    public function show($id){
-
-
+    public function show($id)
+    {
+        $task = Task::find($id);
+        // if (!$task) {
+        //     return response()->json(['message' => 'Tarea no encontrada'], 404);
+        // }
+        return response()->json($task);
     }
     public function update(){
-
 
     }
     public function destroy(Request $request, $id) {
