@@ -40,6 +40,8 @@ Route::controller(TaskController::class)->group(function(){
     Route::post('task/store', 'store')->name('task.store');
     Route::delete('task/{id}', 'destroy')->name('task.destroy');
     Route::get('/task/{id}', 'show')->name('task.show');
+    Route::get('task/{id}/edit','edit')->name('task.edit');
+    Route::put('task/{id}','update')->name('task.update');
 });
 
 

@@ -36,10 +36,19 @@ class TaskController extends Controller
         // }
         return response()->json($task);
     }
-    public function update(){
-
+    public function edit($id){
+        $task = Task::find($id);
+        return response()->json($task);
 
     }
+    public function update(Request $request,$id){
+        $task = Task::find($id);
+        $task -> title = Str::ucfirst($request -> title);
+        $task -> content =Str::ucfirst( $request -> content);
+        $task -> status = $request -> status;
+        $task -> save();
+        return redirect()->back()->with('update', 'ok'); // Regresa a la misma página
+      }
     public function destroy(Request $request, $id) {
         $task = Task::find($id);
         $task->delete();

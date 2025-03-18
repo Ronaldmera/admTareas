@@ -32,8 +32,7 @@
                                     <td id="action">
                                         <button class="btn-show-task" data-id="{{ $task->id }}">Mostrar</button>
 
-                                        <button
-                                            onclick="window.location.href='{{ route('task.create', $task->id) }}'">Editar</button>
+                                        <button class="btn-edit-task" data-id="{{ $task->id }}">Editar</button>
 
                                         <form class="delete" action="{{ route('task.destroy', $task->id) }}" method="POST">
                                             @csrf
@@ -92,7 +91,26 @@
             <button class="close">Cerrar</button>
         </div>
     </div>
+    @if (isset($task))
+        <div class="modal-edit" id="modal-edit" style="display: none;">
+            <form class="form" action="{{ route('task.update', [$task->id]) }}" method="post">
+                @csrf
+                @method('put')
+                <div class="title-form">Actualizar Tarea</div>
+                <input type="text" id="update-title" name="title">
+                <textarea id="update-content" name="content" required></textarea>
+                <select name="status" id="update-status" required>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="completada">Completada</option>
+                </select>
 
+                <div class="options-modal">
+                    <button type="button" class="btn-close-modal">Cancelar</button>
+                    <button type="submit">Actualizar Tarea</button>
+                </div>
+            </form>
+        </div>
+    @endif
 
     @push('scripts')
         <!-- Si el usuario borra una tarea, se activa este if y muestra una animación de borrado adecuada -->
@@ -108,6 +126,7 @@
         @vite(['resources/js/task/colorTaskStatus.js'])
         @vite(['resources/js/task/modalAddTask.js'])
         @vite(['resources/js/task/modalShowTask.js'])
+        @vite(['resources/js/task/modalEdit.js'])
         <!-- scripts SweetAlert libreria-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
