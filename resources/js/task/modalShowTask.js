@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.btn-show-task').forEach(button => {
         button.addEventListener('click', async function () {
             const taskId = this.getAttribute('data-id'); // Obtener ID del botón
-            console.log(`Botón clickeado con ID: ${taskId}`);
-
             try {
                 // Solicitud al backend para obtener la tarea
                 const response = await fetch(`${baseUrl}/task/${taskId}`);
@@ -15,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 const task = await response.json(); // Convertir respuesta en JSON
-                console.log('Datos recibidos:', task);
+                // console.log('Datos recibidos:', task);
 
                 // Actualizar el contenido del modal
                 document.getElementById('modal-title').innerText = task.title || "Sin título";
