@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Cerrar el modal al hacer clic en el botón de cerrar
-    document.querySelector('#modal-edit .btn-close-modal').addEventListener('click', function () {
+    document.querySelector('#modal-task .close').addEventListener('click', function () {
         document.getElementById('modal-edit').style.display = "none";
     });
 

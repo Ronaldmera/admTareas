@@ -333,7 +333,7 @@
 #status-option option:disabled {
     color: #888;
 }
-.modal-show{
+.modal-show, #modal-edit{
     display: none;
     position: fixed;
     z-index: 1000;
