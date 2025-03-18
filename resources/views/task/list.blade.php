@@ -96,7 +96,7 @@
             <form class="form" action="{{ route('task.update', [$task->id]) }}" method="post">
                 @csrf
                 @method('put')
-                <div class="title-form">Actualizar Tarea</div>
+                <div class="title-form">Editar Tarea</div>
                 <input type="text" id="update-title" name="title">
                 <textarea id="update-content" name="content" required></textarea>
                 <select name="status" id="update-status" required>
@@ -120,6 +120,10 @@
         @if (session('save') == 'ok')
             <!-- muestra mensaje al crear nueva tarea -->
             @vite(['resources/js/task/msjSaveTask.js'])
+        @endif
+        @if (session('update') == 'ok')
+            <!-- muestra mensaje al actualizar una tarea -->
+            @vite(['resources/js/task/msjUpdateTask.js'])
         @endif
 
         @vite(['resources/js/task/taskDelete.js'])

@@ -47,7 +47,7 @@ class TaskController extends Controller
         $task -> content =Str::ucfirst( $request -> content);
         $task -> status = $request -> status;
         $task -> save();
-        return redirect()->back()->with('update', 'ok'); // Regresa a la misma página
+        return redirect()->back()->with('update', 'ok');
       }
     public function destroy(Request $request, $id) {
         $task = Task::find($id);
