@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Mostrar el modal
                 const modal = document.getElementById('modal-task');
-                modal.style.display = "flex";
+                modal.classList.add('modal-show-active');
 
             } catch (error) {
                 console.error('Error al cargar la tarea:', error);
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cerrar el modal al hacer clic en el botón de cerrar
     document.querySelector('#modal-task .close').addEventListener('click', function () {
-        document.getElementById('modal-task').style.display = "none";
+        document.getElementById('modal-task').classList.remove('modal-show-active');
     });
 
     // Cerrar el modal al hacer clic fuera del contenido del modal (opcional)
