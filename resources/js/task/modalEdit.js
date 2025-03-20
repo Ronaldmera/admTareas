@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!response.ok) {
                     throw new Error(`Error ${response.status}: ${response.statusText}`);
                 }
-
                 const task = await response.json(); // Convertir respuesta en JSON
 
                 // Rellenar los campos del formulario con los datos de la tarea
@@ -24,8 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 form.action = `${baseUrl}/task/${taskId}`;  // Establecer la acción para actualizar la tarea
 
                 // Mostrar el modal de edición
-                const modal = document.getElementById('modal-edit');
-                modal.style.display = "flex";
+                const modal = document.querySelector('.modal-edit');
+                modal.classList.add('modal-edit-active');
                 let icoAdd = document.querySelector('.item-add'); // oculta icono de add tarea
                 icoAdd.style.display = "none";
 
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cerrar el modal al hacer clic en el botón de cerrar
     document.querySelector('#modal-edit .btn-close-modal').addEventListener('click', function () {
-        document.getElementById('modal-edit').style.display = "none";
+        document.getElementById('modal-edit').classList.remove('modal-edit-active');
         let icoAdd = document.querySelector('.item-add'); //muestra nuevamente el icono para add tarea
         icoAdd.style.display = "flex";
     });

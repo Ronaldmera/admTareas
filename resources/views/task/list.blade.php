@@ -92,7 +92,7 @@
         </div>
     </div>
     @if (isset($task))
-        <div class="modal-edit" id="modal-edit" style="display: none;">
+        <div class="modal-edit" id="modal-edit">
             <form class="form" action="{{ route('task.update', [$task->id]) }}" method="post">
                 @csrf
                 @method('put')
