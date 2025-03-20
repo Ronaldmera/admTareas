@@ -35,4 +35,7 @@ class UserController extends Controller
         //al usuario borrar el perfil el valor será 'ok' y en la vista 'user.login' se comprueba el valor atravez de in if y se carga la animacion de borrado exitoso
         return redirect()->route('user.login')-> with('eliminar','ok');
     }
+    public function showProfile(){
+        return view('User.profile');
+    }
 }

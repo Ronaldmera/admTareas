@@ -10,7 +10,7 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="{{ route('dashboard') }}">Inicio</a></li>
                 <li><a href="{{ route('task.index') }}">Tareas</a></li>
-                <li><a href="">Perfil</a></li>
+                <li><a href="{{ route('user.showProfile') }}">Perfil</a></li>
                 <!-- Botón de Cerrar Sesión con Ícono -->
                 <li class="logout">
                     <form action="{{ route('logout') }}" method="POST">
