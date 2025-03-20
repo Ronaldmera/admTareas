@@ -40,4 +40,35 @@ class UserController extends Controller
         $user = Auth()->user();
         return view('User.profile', compact('user'));
     }
+    public function profileUpdate(Request $request)
+    {
+        $user = auth()->user();
+
+        // Validar entrada
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048'
+        ]);
+
+        // Actualizar nombre
+        $user->name = $request->name;
+
+        // Si hay una nueva imagen
+        if ($request->hasFile('image')) {
+            // Eliminar imagen anterior si existe
+            if ($user->image) {
+                \Storage::disk('public')->delete($user->image->path);
+            }
+
+            // Guardar nueva imagen en almacenamiento público
+            $path = $request->file('image')->store('profile_images', 'public');
+
+            // Actualizar o crear imagen en BD usando la relación polimórfica
+            $user->image()->updateOrCreate([], ['path' => $path]);
+        }
+
+        $user->save();
+
+        return redirect()->back()->with('update', 'ok');
+    }
 }
