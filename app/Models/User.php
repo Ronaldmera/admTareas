@@ -50,6 +50,15 @@ class User extends Authenticatable
         return $this-> hasMany('App\Models\Task');
     }
 
+    public function image(){
+    return $this->morphOne(Image::class, 'imageable');
+    }
+
+// Método para obtener la imagen del usuario (con imagen por defecto)
+public function getImageUrlAttribute(){
+    return $this->image ? asset('storage/' . $this->image->path) : asset('images/default-profile.png');
+    }
+
 
 }
 
