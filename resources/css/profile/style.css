@@ -52,13 +52,18 @@
     width: 100vw;
     height: 103vh;
     background-color: rgba(0, 0, 0, 0.685);
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
-    /* opacity: 0;
+    opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out; */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
+ .modal-edit-active{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) translateY(0);
+ }
 .profile .edit-ico,.container-form .close-edit-ico{
     width: 30px;
     height: 30px;
