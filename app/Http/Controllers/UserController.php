@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class UserController extends Controller
 {
@@ -44,24 +46,22 @@ class UserController extends Controller
     {
         $user = auth()->user();
 
-        // Validar entrada
         $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048'
         ]);
 
-        // Actualizar nombre
         $user->name = $request->name;
 
-        // Si hay una nueva imagen
-        if ($request->hasFile('image')) {
-            // Eliminar imagen anterior si existe
-            if ($user->image) {
-                \Storage::disk('public')->delete($user->image->path);
-            }
+     // Si hay una nueva imagen
+     if ($request->hasFile('image')) {
+        // Eliminar imagen anterior si existe
+        if ($user->image && Storage::disk('public')->exists($user->image->path)) {
+            Storage::disk('public')->delete($user->image->path);
+        }
 
-            // Guardar nueva imagen en almacenamiento público
-            $path = $request->file('image')->store('profile_images', 'public');
+    // Guardar la nueva imagen
+     $path = $request->file('image')->store('profile_images', 'public');
 
             // Actualizar o crear imagen en BD usando la relación polimórfica
             $user->image()->updateOrCreate([], ['path' => $path]);
