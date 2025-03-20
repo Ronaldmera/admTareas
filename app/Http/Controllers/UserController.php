@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -36,6 +37,7 @@ class UserController extends Controller
         return redirect()->route('user.login')-> with('eliminar','ok');
     }
     public function showProfile(){
-        return view('User.profile');
+        $user = Auth()->user();
+        return view('User.profile', compact('user'));
     }
 }
