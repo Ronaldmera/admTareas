@@ -379,7 +379,7 @@
 }
 #modal-title{
     font-size: 2rem;
-    color: #14a9e9;
+    color: #4169E1;
     display: flex;
     justify-content: center;
 }
@@ -388,14 +388,14 @@
     justify-content: center;
     width: 100px;
     margin: 0 auto;
-    background-color: #14a9e9;
+    background-color: #4169E1;
     color: white;
     font-size: 1.2rem;
-    border-radius: 10px;
+    border-radius: 5px;
     align-items: center;
     height: 30px;
     border: none;
-    box-shadow: 1px 1px 4px rgb(32, 35, 37);
+    box-shadow: 1px 1px 4px rgb(191, 203, 211);
 }
 .hidden {
     display: none;
