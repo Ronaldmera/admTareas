@@ -43,8 +43,10 @@
                                 @foreach ($pendingTasks as $pendingTask)
                                     <tr>
                                         <td class="task-title">
-                                            <a href="https://fonts.google.com/">{{ $pendingTask->title }}</a>
+                                            <a
+                                                href="{{ route('task.index', ['id' => $pendingTask->id]) }}">{{ $pendingTask->title }}</a>
                                         </td>
+
                                         <td id="content">{{ $pendingTask->content }}</td>
                                         <td id="pending">{{ $pendingTask->status }}</td>
                                         <td id="date">{{ $pendingTask->created_at->format('d-m-Y') }}</td>
@@ -57,9 +59,7 @@
                     <div class="pagination">
                         {{ $pendingTasks->links('pagination::bootstrap-4') }}
                     </div>
-
                 </div>
-
             </div>
             <div class="note">
                 <p><strong>Nota: </strong><em> Solo se visualizan un máximo de 10 tareas pendientes. Para ver más, navega

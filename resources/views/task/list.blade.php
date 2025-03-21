@@ -24,7 +24,7 @@
                             </tr>
                         @else
                             @foreach ($tasks as $task)
-                                <tr>
+                                <tr class="{{ isset($taskShow) && $taskShow->id == $task->id ? 'task-select' : '' }}">
                                     <td>{{ $task->title }}</td>
                                     <td>{{ $task->content }}</td>
                                     <td id="status">{{ $task->status }}</td>
@@ -131,10 +131,10 @@
         @vite(['resources/js/task/modalAddTask.js'])
         @vite(['resources/js/task/modalShowTask.js'])
         @vite(['resources/js/task/modalEdit.js'])
+        @vite(['resources/js/task/moveTaskStart.js'])
         <!-- scripts SweetAlert libreria-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
         <script>
             let taskStatus = @json($tasks->pluck('status'));
         </script>
