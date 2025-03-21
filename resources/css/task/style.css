@@ -377,6 +377,10 @@
     height: 30px;
     border-radius: 3px;
 }
+.modal-edit .form #update-title, #update-content, #update-status{
+    font-size: 1rem;
+    font-family: quicksand;
+}
 
 @media (min-width: 1024px) and (max-width: 1440px) {
     .tasks-container {
