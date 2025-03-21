@@ -43,7 +43,6 @@
     font-weight: bolder;
     /* color: #333; */
 }
-
 .container-form {
     position: fixed;
     top: 50%;
@@ -73,7 +72,6 @@
     top: 20px;
     cursor: pointer;
 }
-
 .container-form form{
     position: relative;
     background-color: rgb(99, 107, 107);
@@ -105,3 +103,40 @@
     background-color: rgb(25, 151, 224);
     color: white;
 }
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+}
+
+@media (max-width: 1024px){
+
+}
+
+@media (max-width: 768px) {
+    .container-profile{
+        max-width: 500px;
+    }
+    .container-profile h1{
+        font-size: 1.5rem;
+    }
+    .container-profile p{
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 480px) {
+    .container-profile{
+        max-width: 500px;
+    }
+    .container-form{
+        padding: 20px;
+    }
+    .container-form form{
+    min-width: 300px;
+    padding: 30px;
+    font-size: 1.2rem;
+    }
+    .container-form #image{
+        font-size: 13px;
+    }
+}
+
