@@ -213,7 +213,7 @@
 }
 /*modal para agregar una tarea*/
 /* From Uiverse.io by Yaya12085 */
-.modal-create-task {
+.modal-create-task, .modal-show, .modal-edit{
     position: fixed;
     top: 50%;
     left: 50%;
@@ -227,9 +227,10 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    font-family: quicksand;
 }
 
-.modal-create-task.active {
+.modal-create-task.active, .modal-show-active, .modal-edit-active{
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) translateY(0);
@@ -335,27 +336,6 @@
 #status-option option:disabled {
     color: #888;
 }
-.modal-show{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateY(10px);
-    width: 100vw;
-    height: 103vh;
-    background-color: rgba(0, 0, 0, 0.685);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    font-family: quicksand;
-}
-.modal-show-active{
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) translateY(0);
- }
 
 .modal-content {
     display: flex;
@@ -399,26 +379,6 @@
 }
 .hidden {
     display: none;
-}
-.modal-edit{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateY(10px);
-    width: 100vw;
-    height: 103vh;
-    background-color: rgba(0, 0, 0, 0.685);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-}
-.modal-edit-active{
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) translateY(0);
 }
 .modal-edit .form #update-status{/*opciones de completa y pendiente en modal edit*/
     width: 100%;
