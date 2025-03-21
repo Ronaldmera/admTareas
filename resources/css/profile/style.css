@@ -44,14 +44,18 @@
     /* color: #333; */
 }
 .btn-user-delete{
-    background-color: aqua;
+   padding: 10px;
+   border-radius: 4px;
+   border: none;
+   background-color: #74B3CE;
+   color: white;
 }
 .container-form {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateY(10px);
-    width: 100vw;
+    width: 101vw;
     height: 103vh;
     background-color: rgba(0, 0, 0, 0.685);
     display: flex;

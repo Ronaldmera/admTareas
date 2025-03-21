@@ -38,12 +38,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('#modal-task .close').addEventListener('click', function () {
         document.getElementById('modal-task').classList.remove('modal-show-active');
     });
-
-    // Cerrar el modal al hacer clic fuera del contenido del modal (opcional)
-    const modal = document.getElementById('modal-task');
-    modal.addEventListener('click', function (event) {
-        if (event.target === this) {
-            this.style.display = "none"; // Ocultar el modal si se hace clic fuera
-        }
-    });
 });
