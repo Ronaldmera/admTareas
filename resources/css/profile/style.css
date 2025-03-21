@@ -95,10 +95,13 @@
 .container-form form label, input{
     height: 30px;
     text-align: center;
-    /* background-color: #53add3; */
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     font-size: 1rem;
+}
+.container-form #image{
+    font-size: 13px;
+    border-radius: 0;
 }
 .container-form form button{
     height: 30px;
@@ -106,7 +109,6 @@
     border-radius: 10px;
     border: none;
     margin: 0 auto;
-    /* background-color:#53add3; */
     background-color: rgb(25, 151, 224);
     color: white;
 }
