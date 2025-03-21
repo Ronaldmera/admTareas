@@ -18,8 +18,6 @@
     <!-- js muestra la contraseña y la oculta al hacer click en el icono del ojo-->
     @vite(['resources/js/login/showPassword.js'])
 
-
-
 </head>
 
 <body>

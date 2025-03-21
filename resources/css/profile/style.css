@@ -43,6 +43,9 @@
     font-weight: bolder;
     /* color: #333; */
 }
+.btn-user-delete{
+    background-color: aqua;
+}
 .container-form {
     position: fixed;
     top: 50%;

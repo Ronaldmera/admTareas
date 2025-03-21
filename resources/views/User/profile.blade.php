@@ -14,6 +14,12 @@
             <img class="edit-ico" src="{{ asset('images/profile/edit.svg') }}" alt="icono editar perfil">
             <p class="email">{{ $user->email }}</p>
             <p>Fecha de Creación: {{ $user->created_at->format('d-m-Y') }}</p>
+            <!-- Formulario eliminar usuario -->
+            <form action="{{ route('user.destroy', [$user->id]) }}" class="formularioEliminar" method="POST">
+                @csrf
+                @method('Delete')
+                <button type="submit" class="btn-user-delete">Eliminar Cuenta</button>
+            </form>
             <div class="container-form">
                 <!-- Formulario para actualizar nombre e imagen -->
                 <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
@@ -21,7 +27,6 @@
                         alt="icono cerrar modal editar">
                     @csrf
                     @method('PUT')
-
                     <!-- Cambiar Nombre -->
                     <label for="name">Nombre:</label>
                     <input type="text" id="name" name="name" value="{{ $user->name }}" required>
@@ -40,6 +45,7 @@
             @vite(['resources/js/profile/msjProfileUpdate.js'])
         @endif
         @vite(['resources/js/profile/app.js'])
+        @vite(['resources/js/user/userDelete.js'])
         <!-- scripts SweetAlert libreria-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
