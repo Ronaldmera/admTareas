@@ -211,7 +211,7 @@
 .total{
   margin-top: 20px;
 }
-/*modal para agregar una tarea*/
+/*modal para agregar tarea, mostrar y editar*/
 /* From Uiverse.io by Yaya12085 */
 .modal-create-task, .modal-show, .modal-edit{
     position: fixed;
@@ -229,12 +229,13 @@
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
     font-family: quicksand;
 }
-
+/*clases que permiten visualizar los modales*/
 .modal-create-task.active, .modal-show-active, .modal-edit-active{
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) translateY(0);
 }
+/*estilos de modal agregar tarea*/
 .form {
     position: relative;
     display: flex;
@@ -249,7 +250,6 @@
     border-radius: 10px;
     box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
   }
-
   .title-form {
     color: royalblue;
     font-size: 30px;
@@ -260,7 +260,6 @@
     align-items: center;
     justify-content: center;
   }
-
   .form input {
     outline: 0;
     border: 1px solid rgb(219, 213, 213);
@@ -272,7 +271,6 @@
   .form .title,.content{
     font-size: 15px;
   }
-
   .form textarea {
     border-radius: 8px;
     height: 100px;
@@ -282,7 +280,6 @@
     padding: 8px 14px;
     border: 1px solid rgb(219, 213, 213);
   }
-
   .form button {
     align-self: flex-end;
     padding: 8px;
@@ -314,29 +311,23 @@
 .options-modal .btn-close-modal{
     background-color: #E57373;
 }
-
-/* Cambia el borde al hacer foco en el select */
 #status-option:focus {
     border-color: royalblue;
 }
-
-/* Cambia el cursor cuando se pasa sobre el select */
 #status-option:hover {
     border-color: #888;
 }
-
 /* Estilos para las opciones */
 #status-option option {
     font-size: 16px;
     background-color: white;
     color: black;
 }
-
 /* Estilo para la opción deshabilitada */
 #status-option option:disabled {
     color: #888;
 }
-
+/*estilos de modal mostrar tarea*/
 .modal-content {
     display: flex;
     flex-direction: column;
@@ -380,6 +371,7 @@
 .hidden {
     display: none;
 }
+/*estilos modal edit*/
 .modal-edit .form #update-status{/*opciones de completa y pendiente en modal edit*/
     width: 100%;
     height: 30px;
