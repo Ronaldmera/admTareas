@@ -40,7 +40,7 @@ class UserController extends Controller
     }
     public function showProfile(){
         $user = Auth()->user();
-        return view('User.profile', compact('user'));
+        return view('user.profile', compact('user'));
     }
     public function profileUpdate(Request $request)
     {
