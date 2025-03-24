@@ -8,16 +8,16 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Task;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //Controla el inicio de sesion
-// Route::controller(AuthController::class)->group(function(){
-//     Route::get('/','showLogin')->name('user.login');
-//     Route::post('/login','login')->name('login');
-//     Route::post('logout', 'logout')->name('logout');
-// });
+Route::controller(AuthController::class)->group(function(){
+    Route::get('/','showLogin')->name('user.login');
+    Route::post('/login','login')->name('login');
+    Route::post('logout', 'logout')->name('logout');
+});
 //solo los usuarios logeados pueden ver la pagina principal o dashboard'
 Route::middleware('auth')->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
