@@ -57,18 +57,25 @@ class TaskController extends Controller
         $task -> title = Str::ucfirst($request -> title);//convierte la primera letra en maytuscula
         $task -> content =Str::ucfirst( $request -> content);
         $task -> status = $request -> status;
+        $task -> end_date = $request -> end_date;
         $task -> save();
         return redirect()->route('task.index')->with('save','ok');
     }
 
     public function show($id)
     {
-        $task = Task::find($id);
-        // if (!$task) {
-        //     return response()->json(['message' => 'Tarea no encontrada'], 404);
-        // }
-        return response()->json($task);
+        $task = Task::findOrFail($id); 
+    
+        return response()->json([
+            'id' => $task->id,
+            'title' => $task->title,
+            'content' => $task->content,
+            'status' => $task->status,
+            'created_at' => $task->created_at->toDateString(), // "2025-04-05"
+            'end_date' => $task->end_date ? $task->end_date->toDateString() : null,
+        ]);
     }
+    
     public function edit($id){
         $task = Task::find($id);
         return response()->json($task);
@@ -79,6 +86,7 @@ class TaskController extends Controller
         $task -> title = Str::ucfirst($request -> title);
         $task -> content =Str::ucfirst( $request -> content);
         $task -> status = $request -> status;
+        $task -> end_date = $request -> end_date;
         $task -> save();
         return redirect()->back()->with('update', 'ok');
       }

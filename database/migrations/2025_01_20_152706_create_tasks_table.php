@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->enum('status', ['pendiente', 'completada'])->default('pendiente');
+            $table->date('end_date');
             $table->timestamps();
         });
     }

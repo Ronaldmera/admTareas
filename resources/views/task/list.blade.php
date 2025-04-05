@@ -13,14 +13,15 @@
                             <th class="title">Título</th>
                             <th class="content">Descripción</th>
                             <th class="status">Estado</th>
-                            <th class="date">Fecha de Creación</th>
+                            <th class="date">F.Creación</th>
+                            <th class="date">F.Límite</th>
                             <th class="action">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if ($tasks->isEmpty())
                             <tr>
-                                <td class="msj-task-empty" colspan="5">No hay tareas disponibles</td>
+                                <td class="msj-task-empty" colspan="6">No hay tareas disponibles</td>
                             </tr>
                         @else
                             @foreach ($tasks as $task)
@@ -29,6 +30,7 @@
                                     <td>{{ $task->content }}</td>
                                     <td id="status">{{ $task->status }}</td>
                                     <td id="date">{{ $task->created_at->format('d-m-Y') }}</td>
+                                    <td id="end_date">{{ $task->end_date->format('d-m-Y')}}</td>
                                     <td id="action">
                                         <button class="btn-show-task" data-id="{{ $task->id }}">Mostrar</button>
 
@@ -68,6 +70,8 @@
             <div class="title-form">Agregar Tarea</div>
             <input type="text" class="title" placeholder="Título" name="title" required>
             <textarea class="content" placeholder="Describe tu tarea aquí" name="content" required></textarea>
+            <label for="end_date" class="content">Fecha Límite:</label>
+            <input type='date' name="end_date"required>
             <select name="status" id="status-option" required>
                 <option value="" disabled selected>Selecciona una opción</option>
                 <option value="pendiente">Pendiente</option>
@@ -88,6 +92,7 @@
             <p><span id="modal-description"></span></p>
             <p><strong>Estado:</strong> <span id="modal-status"></span></p>
             <p><strong>Fecha de Creación:</strong> <span id="modal-date"></span></p>
+            <p><strong>Fecha Límite:</strong> <span id="modal-end-date"></span></p>
             <button class="close">Cerrar</button>
         </div>
     </div>
@@ -99,6 +104,7 @@
                 <div class="title-form">Editar Tarea</div>
                 <input type="text" id="update-title" name="title">
                 <textarea id="update-content" name="content" required></textarea>
+                <input type="date" id="update-end-date" name="end_date">
                 <select name="status" id="update-status" required>
                     <option value="pendiente">Pendiente</option>
                     <option value="completada">Completada</option>

@@ -5,9 +5,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Task;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-
 // Route::get('/', function () {
 //     return view('welcome');
 // });
