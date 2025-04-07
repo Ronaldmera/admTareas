@@ -104,6 +104,7 @@
                 <div class="title-form">Editar Tarea</div>
                 <input type="text" id="update-title" name="title">
                 <textarea id="update-content" name="content" required></textarea>
+                <label for="update-end-date" class="content">Fecha Límite</label>
                 <input type="date" id="update-end-date" name="end_date">
                 <select name="status" id="update-status" required>
                     <option value="pendiente">Pendiente</option>
