@@ -13,6 +13,7 @@ class TaskController extends Controller
         $user = auth()->user(); // Obtener el usuario autenticado
         $taskId = $request->query('id'); // Obtener el ID de la tarea seleccionada
         $taskShow = null; // Inicializar la variable
+        $allTasks = Task::where('user_id', $user->id)->get(); // TODAS las tareas
 
         // Contar el total de tareas
         $tasksTotal = Task::where('user_id', $user->id)->count();
@@ -46,7 +47,7 @@ class TaskController extends Controller
         // Calcular tareas mostradas hasta la página actual
         $tasksShown = ($tasks->currentPage() - 1) * $tasks->perPage() + $tasks->count();
 
-        return view('task.list', compact('tasks', 'tasksTotal', 'tasksShown', 'taskShow'));
+        return view('task.list', compact('tasks', 'tasksTotal', 'tasksShown', 'taskShow', 'allTasks'));
     }
 
 
