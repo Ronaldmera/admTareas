@@ -10,6 +10,7 @@ class DashboardController extends Controller
     public function index()
     {
         $user = auth()->user();
+        $userName = $user->name;
 
         $pendingTasks = Task::where('user_id', $user->id)
             ->where('status', 'pendiente')
@@ -24,6 +25,6 @@ class DashboardController extends Controller
             ->where('status', 'pendiente')
             ->count();
 
-        return view('dashboard', compact('pendingTasks', 'pending', 'complete'));
+        return view('dashboard', compact('userName','pendingTasks', 'pending', 'complete'));
     }
 }

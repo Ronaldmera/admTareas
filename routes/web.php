@@ -19,7 +19,6 @@ Route::controller(AuthController::class)->group(function(){
 Route::middleware('auth')->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
-
 //controla los usuarios
 Route::controller(UserController::class)->group(function(){
     Route::get('user/create','create')->name('user.create');//crea usuario

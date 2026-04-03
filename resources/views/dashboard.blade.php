@@ -2,7 +2,14 @@
 @section('styles')
 @endsection
 @section('content')
-    <h2 class="text-center mb-5">Resumen General</h2>
+    <nav aria-label="breadcrumb" class=" bg-white">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href={{ route('dashboard') }}>Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+    </nav>
+    <h2>Bienvenido <strong class=" text-dark">{{ $userName }}</strong></h2>
+    <h2 class="text-center mb-5"> <i class="bi bi-bar-chart me-3"></i>Resumen General</h2>
     <div class="row">
         <div class="col-12">
             <div class="pending-tasks bg-white p-5 rounded-4">
