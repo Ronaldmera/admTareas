@@ -1,4 +1,4 @@
-<header>
+{{-- <header>
     <div class="container">
         <!-- Logo o Nombre de la Aplicación -->
         <div class="logo">
@@ -28,4 +28,28 @@
             </div>
         </nav>
     </div>
-</header>
+</header> --}}
+<div class="container-fluid bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="{{ route('dashboard') }}">ADM TASKS</a>
+            {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> --}}
+            <div class=" justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item d-flex align-items-center">
+                        <span class="text-white">Salir</span>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn">
+                                <i class="bi bi-box-arrow-right text-light fs-5"></i>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

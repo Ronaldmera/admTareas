@@ -1,16 +1,13 @@
-*{
-    box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
+.sidebar {
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    height: 98dvh;
+    width: 15rem;
+    border-right: 1px solid rgba(21, 21, 29, 0.18);
 }
-body{
-    font-size: 62.5%;
-}
-main{
-    /* flex: 1; */
-    min-height: 90vh;
-    background-color: #F6FBFF;
-}
-.swal2-popup {
-    font-family: 'Arial', sans-serif !important;
+.main-content {
+    margin-left: 250px;
+    margin-top: 56px;
+    padding: 20px;
 }

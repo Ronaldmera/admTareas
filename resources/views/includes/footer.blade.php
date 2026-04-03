@@ -1,4 +1,4 @@
-<footer>
+{{-- <footer>
     <div class="footer-container">
 
         <div class="footer-title">
@@ -8,4 +8,4 @@
             <p>© 2025 ADM Tasks. Todos los derechos reservados.</p>
         </div>
     </div>
-</footer>
+</footer> --}}

@@ -1,4 +1,4 @@
-.container-profile{
+.container-profile {
     display: flex;
     flex-direction: column;
     height: 90vh;
@@ -12,14 +12,14 @@
     align-items: center;
     color: whitesmoke;
 }
-.container-profile h1{
+.container-profile h1 {
     font-size: 2rem;
-    color:#74B3CE;
+    color: #74b3ce;
 }
-.container-profile p{
+.container-profile p {
     font-size: 1.3rem;
 }
-.profile{
+.profile {
     display: flex;
     gap: 20px;
     flex-direction: column;
@@ -31,7 +31,7 @@
     border-radius: 20px;
     position: relative;
 }
-.profile img{
+.profile img {
     display: flex;
     margin: 0 auto;
     border-radius: 50%;
@@ -39,16 +39,17 @@
     height: 120px;
     object-fit: cover;
 }
-.profile .name, .email{
+.profile .name,
+.email {
     font-weight: bolder;
     /* color: #333; */
 }
-.btn-user-delete{
-   padding: 10px;
-   border-radius: 4px;
-   border: none;
-   background-color: #74B3CE;
-   color: white;
+.btn-user-delete {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #74b3ce;
+    color: white;
 }
 .container-form {
     position: fixed;
@@ -63,14 +64,17 @@
     align-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    transition:
+        opacity 0.3s ease-out,
+        transform 0.3s ease-out;
 }
- .modal-edit-active{
+.modal-edit-active {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) translateY(0);
- }
-.profile .edit-ico,.container-form .close-edit-ico{
+}
+.profile .edit-ico,
+.container-form .close-edit-ico {
     width: 30px;
     height: 30px;
     object-fit: contain;
@@ -79,7 +83,7 @@
     top: 20px;
     cursor: pointer;
 }
-.container-form form{
+.container-form form {
     position: relative;
     background-color: rgb(99, 107, 107);
     min-width: 400px;
@@ -92,18 +96,19 @@
     gap: 10px;
     border-radius: 10px;
 }
-.container-form form label, input{
+.container-form form label,
+input {
     height: 30px;
     text-align: center;
     border-radius: 5px;
     border: none;
     font-size: 1rem;
 }
-.container-form #image{
+.container-form #image {
     font-size: 13px;
     border-radius: 0;
 }
-.container-form form button{
+.container-form form button {
     height: 30px;
     width: 50%;
     border-radius: 10px;
@@ -114,38 +119,35 @@
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
-
 }
 
-@media (max-width: 1024px){
-
+@media (max-width: 1024px) {
 }
 
 @media (max-width: 768px) {
-    .container-profile{
+    .container-profile {
         max-width: 500px;
     }
-    .container-profile h1{
+    .container-profile h1 {
         font-size: 1.5rem;
     }
-    .container-profile p{
+    .container-profile p {
         font-size: 1.1rem;
     }
 }
 @media (max-width: 480px) {
-    .container-profile{
+    .container-profile {
         max-width: 500px;
     }
-    .container-form{
+    .container-form {
         padding: 20px;
     }
-    .container-form form{
-    min-width: 300px;
-    padding: 30px;
-    font-size: 1.2rem;
+    .container-form form {
+        min-width: 300px;
+        padding: 30px;
+        font-size: 1.2rem;
     }
-    .container-form #image{
+    .container-form #image {
         font-size: 13px;
     }
 }
-
