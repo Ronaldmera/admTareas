@@ -1,26 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
     const ctx = document.getElementById("myChart").getContext("2d");
 
+    let labels = ["Completadas", "Pendientes"];
+    let data = [complete, pending];
+    let colors = ["#3cb198", "#e26355"];
+
+    if (pending === 0 && complete === 0) {
+        labels = ["Sin tareas"];
+        data = [1];
+        colors = ["#6c757d"];
+    }
     new Chart(ctx, {
         type: "doughnut",
         data: {
-            labels: ["Completadas", "Pendientes"],
+            labels: labels,
             datasets: [
                 {
-                    data: [complete, pending],
-                    backgroundColor: ["#3cb198", "#e26355"],
+                    data: data,
+                    backgroundColor: colors,
                 },
             ],
         },
         options: {
             responsive: true,
-            maintainAspectRatio: false, // 👈 clave
+            maintainAspectRatio: false,
         },
     });
 });
-
-//si no hay tareas muestra el mensaje de: no hay tareas para realizar la grafica
-// let msjEmpty = document.querySelector('.tasks-empty');
-//     if(complete === 0 && pending === 0){
-//     msjEmpty.style.display = "flex";
-// }

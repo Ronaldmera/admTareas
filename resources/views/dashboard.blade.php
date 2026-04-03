@@ -67,10 +67,7 @@
         <!-- scripts ChartArt libreria-->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        @if ($pendingTasks->isNotEmpty())
-            @vite(['resources/js/task/grafic.js'])
-        @endif
-        @vite(['resources/js/dashboard/welcomeTextAnimation.js'])
+        @vite(['resources/js/task/grafic.js'])
         <!-- Estas variables pasan datos de php a JS por medio de formato Json-->
         <script>
             let pending = @json($pending);
