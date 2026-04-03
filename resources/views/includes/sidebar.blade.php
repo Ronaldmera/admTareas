@@ -1,4 +1,4 @@
-<div class="d-flex sidebar flex-column flex-shrink-0 p-3 bg-dark">
+<div class="d-flex sidebar flex-column flex-shrink-0 p-3">
     <ul class="nav nav-pills flex-column mb-auto">
 
         <li class="nav-item mb-2">
@@ -12,6 +12,12 @@
             <a href="{{ route('task.index') }}" class="nav-link link-dark bg-light">
                 <i class="bi bi-list-task  text-primary"></i>
                 Tareas
+            </a>
+        </li>
+        <li class="nav-item mb-2">
+            <a href="{{ route('user.showProfile') }}" class="nav-link link-dark bg-light">
+                <i class="bi bi-person text-primary"></i>
+                Perfil
             </a>
         </li>
     </ul>

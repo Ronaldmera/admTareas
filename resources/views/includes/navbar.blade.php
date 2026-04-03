@@ -29,8 +29,8 @@
         </nav>
     </div>
 </header> --}}
-<div class="container-fluid bg-primary fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-light">
+<div class="container-fluid  fixed-top  p-0">
+    <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="{{ route('dashboard') }}">ADM TASKS</a>
             {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

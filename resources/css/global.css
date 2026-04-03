@@ -1,13 +1,41 @@
+:root {
+    --color-primary: #3cb198;
+    --color-second: #2c3f48;
+    --color-orange: #e26355;
+}
+.color-primary {
+    color: var(--color-primary);
+}
+.color-orange {
+    color: var(--color-orange);
+}
+.navbar {
+    background-color: var(--color-primary);
+}
 .sidebar {
     position: fixed;
-    top: 3rem;
+    top: 3.5rem;
     left: 0;
     height: 98dvh;
     width: 15rem;
     border-right: 1px solid rgba(21, 21, 29, 0.18);
+    background-color: var(--color-primary);
 }
 .main-content {
-    margin-left: 250px;
+    margin-left: 15rem;
     margin-top: 56px;
-    padding: 20px;
+    padding: 2rem;
+    background-color: #e6edef;
+    min-height: 100vh;
+}
+h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.card {
+    max-width: 200px;
+}
+.grafic {
+    height: 200px;
 }
