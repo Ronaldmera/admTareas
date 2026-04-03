@@ -31,6 +31,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $pendingTasks->links() }}
             </div>
         </div>
 
