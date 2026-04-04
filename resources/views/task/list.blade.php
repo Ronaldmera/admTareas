@@ -92,16 +92,18 @@
         </form>
 
     </div>
-    {{-- <div id="modal-task" class="modal-show">
+    <div id="modal-task" class="modal-show">
         <div class="modal-content">
             <h2 id="modal-title">Título de la Tarea</h2>
-            <p><span id="modal-description"></span></p>
+            <p><strong>Descripción:</strong> <span id="modal-description"></span></p>
             <p><strong>Estado:</strong> <span id="modal-status"></span></p>
             <p><strong>Fecha de Creación:</strong> <span id="modal-date"></span></p>
             <p><strong>Fecha Límite:</strong> <span id="modal-end-date"></span></p>
-            <button class="close">Cerrar</button>
+            <div class="d-flex justify-content-center">
+                <button class="close btn btn-primary">Cerrar</button>
+            </div>
         </div>
-    </div> --}}
+    </div>
     {{-- @if (isset($task))
         <div class="modal-edit" id="modal-edit">
             <form class="form" action="{{ route('task.update', [$task->id]) }}" method="post">

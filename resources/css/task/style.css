@@ -149,12 +149,7 @@
 #status-option:hover {
   border-color: #888;
 }
-/* Estilos para las opciones */
-#status-option option {
-  font-size: 16px;
-  background-color: white;
-  color: black;
-}
+
 /* Estilo para la opción deshabilitada */
 #status-option option:disabled {
   color: #888;
@@ -182,23 +177,13 @@
 }
 #modal-title {
   font-size: 2rem;
-  color: #4169e1;
+  color: var(--color-primary);
   display: flex;
   justify-content: center;
 }
 .close {
-  display: flex;
-  justify-content: center;
-  width: 100px;
-  margin: 0 auto;
-  background-color: #4169e1;
-  color: white;
-  font-size: 1.2rem;
-  border-radius: 5px;
+  max-width: 110px;
   align-items: center;
-  height: 30px;
-  border: none;
-  box-shadow: 1px 1px 4px rgb(191, 203, 211);
 }
 .hidden {
   display: none;
@@ -219,184 +204,5 @@
 /* Resaltar la tarea seleccionada */
 .task-select {
   font-weight: bold;
-}
-.tasks-container tbody tr.task-select {
-  border: 2px solid #5490e9;
-  padding: 10px;
-}
-
-@media (min-width: 1024px) and (max-width: 1440px) {
-  .tasks-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0 0%;
-  }
-  .tasks-container thead th {
-    font-size: 17px;
-  }
-  .tasks-container thead th.date {
-    width: 11%;
-  }
-  #action a,
-  #action button {
-    font-size: 12px;
-  }
-  .form {
-    gap: 20px;
-    width: 60%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .tasks-container {
-    padding: 0 0;
-  }
-  .tasks-container thead th {
-    font-size: 15px;
-    padding: 5px;
-  }
-  .tasks-container tbody td {
-    padding: 12px;
-    font-size: 15px;
-  }
-  .all-tasks {
-    padding: 10px;
-  }
-  #action a,
-  #action button {
-    margin: 1px;
-    font-size: 11px;
-  }
-  .container-add-task {
-    bottom: 2vh;
-  }
-
-  .item-add {
-    width: 60px;
-    height: 60px;
-  }
-  .item-add img {
-    width: 100%;
-    height: 50px;
-  }
-  .form {
-    width: 60%;
-  }
-  .modal-content {
-    gap: 30px;
-    width: 70%;
-    padding: 40px;
-  }
-  .modal-content p {
-    font-size: 1.1rem;
-  }
-  #modal-title {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .tasks-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0 4%;
-  }
-  .tasks-container thead {
-    display: none;
-  }
-  .tasks-container tbody {
-    display: flex;
-    flex-direction: column;
-    background-color: #f6fbff;
-    gap: 0px;
-  }
-  .tasks-container tbody tr {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    background-color: #ffffff;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    /* align-items: flex-start; */
-  }
-  .tasks-container tbody td {
-    border-right: none;
-    border-left: none;
-  }
-  td#status,
-  td#date {
-    display: flex;
-    text-align: left;
-  }
-  .container-add-task {
-    bottom: 7vh;
-  }
-  .modal-content {
-    gap: 20px;
-    width: 80%;
-    max-width: 500px;
-  }
-}
-@media (max-width: 480px) {
-  .tasks-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0 0%;
-  }
-  .tasks-container tbody td {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-  }
-  .action a,
-  .action button {
-    width: 90%;
-  }
-  .pagination .total {
-    font-size: 14px;
-  }
-  .container-add-task {
-    bottom: 6vh;
-  }
-  .item-add {
-    width: 55px;
-    height: 55px;
-  }
-  .item-add:hover {
-    background-color: #1b1817;
-    transform: scale(1.1);
-  }
-  .item-add a {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-  }
-  .item-add img {
-    height: 45px;
-  }
-  .form {
-    width: 75%;
-  }
-  .modal-content {
-    gap: 20px;
-    width: 80%;
-    padding: 20px;
-  }
-  .modal-content p {
-    font-size: 1rem;
-  }
-  #modal-title {
-    font-size: 1.5rem;
-  }
-  .options-modal {
-    gap: 10px;
-  }
-  .close {
-    width: 90px;
-    font-size: 1rem;
-    height: 28px;
-  }
+  font-style: oblique;
 }
