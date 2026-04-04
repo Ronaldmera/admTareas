@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('styles')
+    @vite(['resources/css/task/style.css'])
 @endsection
 @section('content')
     <nav aria-label="breadcrumb" class=" bg-white">

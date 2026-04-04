@@ -37,18 +37,6 @@
   border-color: var(--color-primary);
 }
 
-.navbar {
-  background-color: var(--color-primary);
-}
-.sidebar {
-  position: fixed;
-  top: 3.5rem;
-  left: 0;
-  height: 98dvh;
-  width: 15rem;
-  border-right: 1px solid rgba(21, 21, 29, 0.18);
-  background-color: var(--color-primary);
-}
 .main-content {
   margin-left: 15rem;
   margin-top: 56px;
@@ -59,11 +47,4 @@
 h2 {
   color: var(--color-primary);
   margin-bottom: 20px;
-}
-
-.card {
-  max-width: 200px;
-}
-.grafic {
-  height: 200px;
 }

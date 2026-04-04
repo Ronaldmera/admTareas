@@ -206,3 +206,10 @@
   font-weight: bold;
   font-style: oblique;
 }
+
+.card {
+  max-width: 200px;
+}
+.grafic {
+  height: 200px;
+}

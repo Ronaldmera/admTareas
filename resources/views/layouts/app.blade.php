@@ -13,9 +13,8 @@
         rel="stylesheet">
 
     <!-- estilos globales -->
-    {{-- @vite(['resources/css/nav/style.css'])
-    @vite(['resources/css/footer/style.css'])
-    @vite(['resources/js/nav/hamburguer.js']) --}}
+    @vite(['resources/css/nav/style.css'])
+    @vite(['resources/js/nav/hamburguer.js'])
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @vite(['resources/css/global.css'])
     @yield('styles')
