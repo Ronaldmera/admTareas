@@ -104,7 +104,7 @@
             </div>
         </div>
     </div>
-    {{-- @if (isset($task))
+    @if (isset($task))
         <div class="modal-edit" id="modal-edit">
             <form class="form" action="{{ route('task.update', [$task->id]) }}" method="post">
                 @csrf
@@ -125,7 +125,7 @@
                 </div>
             </form>
         </div>
-    @endif --}}
+    @endif
 
     @push('scripts')
         <!-- Si el usuario borra una tarea, se activa este if y muestra una animación de borrado adecuada -->

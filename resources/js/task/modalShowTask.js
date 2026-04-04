@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById('modal-end-date').innerText = fechaLimite;
 
           document.getElementById('modal-task').classList.add('modal-show-active');
-          console.log('debe agregarse clase');
+          document.querySelector('.item-add').style.display = 'none';
         })
         .catch((error) => {
           console.error('Error al cargar la tarea:', error);
@@ -43,5 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('#modal-task .close').addEventListener('click', function () {
     document.getElementById('modal-task').classList.remove('modal-show-active');
+    document.querySelector('.item-add').style.display = 'flex';
   });
 });
