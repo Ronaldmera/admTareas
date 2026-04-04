@@ -14,7 +14,7 @@
         <div class="col-12">
             <div class="pending-tasks bg-white p-5 rounded-4">
                 <h2> Tareas Pendientes</h2>
-                <table class="table table-dark table-striped">
+                <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th scope="col" class="title">Titulo</th>
@@ -27,7 +27,7 @@
                         @foreach ($pendingTasks as $pendingTask)
                             <tr>
                                 <td class="task-title">
-                                    <a class="text-light"
+                                    <a class=""
                                         href="{{ route('task.index', ['id' => $pendingTask->id]) }}">{{ $pendingTask->title }}</a>
                                 </td>
 
@@ -47,14 +47,14 @@
         <div class="col rounded-4  bg-white p-5">
             <h2 class="d-flex justify-content-center ">Resumen de Tareas</h2>
             <div class="row justify-content-center gap-5">
-                <div class="card">
+                <div class="card bg-secondary">
                     <i class="bi bi-clipboard-check fs-1 color-primary"></i>
                     <div class="card-body">
                         <h5 class="card-title">Completadas</h5>
                         <p>Total: {{ $complete }}</p>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card bg-secondary">
                     <i class="bi bi-clipboard-x fs-1 color-orange"></i>
                     <div class="card-body">
                         <h5 class="card-title">Pendientes</h5>

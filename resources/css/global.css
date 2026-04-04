@@ -1,14 +1,23 @@
 :root {
     --color-primary: #3cb198;
-    --color-second: #2c3f48;
+    --color-secondary: #e6edef;
     --color-orange: #e26355;
 }
 .color-primary {
     color: var(--color-primary);
 }
+.bg-secondary {
+    background-color: var(--color-secondary) !important;
+}
 .color-orange {
     color: var(--color-orange);
 }
+.active > .page-link {
+    color: white;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
 .navbar {
     background-color: var(--color-primary);
 }
