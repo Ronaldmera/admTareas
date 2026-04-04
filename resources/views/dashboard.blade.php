@@ -14,7 +14,7 @@
         <div class="col-12">
             <div class="pending-tasks bg-white p-5 rounded-4">
                 <h2> Tareas Pendientes</h2>
-                <table class="table table-striped table-bordered">
+                <table class="table table-striped table-bordered text-center align-middle">
                     <thead>
                         <tr>
                             <th scope="col" class="title">Titulo</th>

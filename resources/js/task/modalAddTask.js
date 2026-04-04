@@ -6,14 +6,14 @@ let contentTextarea = document.querySelector('textarea[name="content"]'); // Tex
 let statusSelect = document.querySelector('#status-option'); // Select de estado
 
 icoAdd.addEventListener('click', () => {
-    modal.classList.add('active');
+  modal.classList.add('active');
 });
 
 closeModal.addEventListener('click', () => {
-    modal.classList.remove('active');
+  modal.classList.remove('active');
 
-    // Limpiar los valores del formulario
-    titleInput.value = "";
-    contentTextarea.value = "";
-    statusSelect.value = "";
+  // Limpiar los valores del formulario
+  titleInput.value = '';
+  contentTextarea.value = '';
+  statusSelect.value = '';
 });

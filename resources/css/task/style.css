@@ -1,563 +1,402 @@
-/* Contenedor principal*/
-.tasks-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0 12%;
-    align-items: center;
-    gap: 5%;
-    width: 100%;
-}
-/*mensaje que se activa al no haber tareas*/
-.msj-task-empty{
-    text-align: center;
-    color: red;
-}
-/* Contenedor de todas las tareas*/
-.all-tasks {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.2rem;
-    margin-top: 3rem;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 10vh;
-}
-/* Título de la sección de tareas */
-.all-tasks h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-    color: #14a9e9;
-    font-family: Arial, Helvetica, sans-serif;
-}
-/* Tabla de tareas */
-.table-resp {
-    overflow-x: auto;
-}
-.tasks-container table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    table-layout: fixed;
-}
-.tasks-container thead {
-    background: #172A3A;
-    color: whitesmoke;
-    text-align: center;
-}
-.tasks-container thead th {
-    padding: 12px;
-    font-weight: bold;
-}
-/*modificando el ancho de cada encabezado*/
-.tasks-container thead th.title {
-    width: 20%;
-}
-
-.tasks-container thead th.content {
-    width: 35%;
-}
-
-.tasks-container thead th.status {
-    width: 10%;
-}
-
-.tasks-container thead th.date {
-    width: 10%;
-}
-
-.tasks-container thead th.action {
-    width: 25%;
-}
-
-.tasks-container tbody tr {
-    border-bottom: 1px solid #ddd;
-}
-.tasks-container tbody tr:last-child {
-    border-bottom: none;
-}
-.tasks-container tbody td {
-    padding: 12px;
-    color: black;
-    background-color: #FFFFFF;
-    border-right: 1px solid #55555528;
-    /* max-width: 90ch; */
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 16px;
-}
-
-/*alineando td de satus y fecha*/
-.tasks-container tbody #status, #date{
-    text-align: center;
-}
-/*contenedor de las acciones*/
-#action{
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
- #action button {
-    text-decoration: none;
-    border: none;
-    padding: 6px 10px;
-    width: 100%;
-    margin: 2px;
-    border-radius: 5px;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-    text-align: center;
-}
-#action form {
-    display: inline-block; /* Hace que el formulario no afecte el botón */
-    width: 100%;
-}
-#action form button {
-    width: 100%;
-}
-#action button:nth-child(1) {
-    background: #17a2b8;
-}
-#action button:nth-child(1):hover {
-    background: #138496;
-}
-#action button:nth-child(2) {
-    background: #28a745;
-}
-
-#action button:nth-child(2):hover {
-    background: #218838;
-}
-#action form button {
-    background: #dc3545;
-}
-#action form button:hover {
-    background: #c82333;
-}
-.pagination {
-    text-align: center;
-    margin-top: 20px;
-}
-.pagination ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 13px;
-    justify-content: center;
-}
-.pagination a,.pagination span {
-    display: inline-block;
-    padding: 3px;
-    text-decoration: none;
-    color: #172a3a;
-    border-radius: 4px;
-    background-color: #d1d1d16c;
-}
-.pagination a[rel="prev"],
-.pagination a[rel="next"],
-.pagination span[aria-hidden="true"] {
-    color: #f3f5f5; /* Cambia el color de los símbolos */
-    font-size: 1.5rem;
-    font-weight:bold;
-    width: 20px;
-    background-color: #8f8d8d;
-}
-
-.pagination .active span {
-    color:#14a9e9;
-}
 /* Contenedor del botón flotante */
 .container-add-task {
-    position: fixed;
-    bottom: 10vh;
-    right: 7vw;
-    z-index: 2;
+  position: fixed;
+  bottom: 10vh;
+  right: 7vw;
+  z-index: 2;
 }
 /* Estilo del botón flotante */
 .item-add {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background-color: #172A3A;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #172a3a;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .item-add:hover {
-    background-color: #1d3549;
-    transform: scale(1.1);
-    box-shadow: 1px 1px 10px #78a6cc;
+  background-color: #1d3549;
+  transform: scale(1.1);
+  box-shadow: 1px 1px 10px #78a6cc;
 }
-.item-add a{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    align-items: center;
+.item-add a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
 }
 .item-add img {
-    width: 100%;
-    height: 60px;
+  width: 100%;
+  height: 60px;
 }
-.total{
+.total {
   margin-top: 20px;
 }
 /*modal para agregar tarea, mostrar y editar*/
 /* From Uiverse.io by Yaya12085 */
-.modal-create-task, .modal-show, .modal-edit{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) translateY(10px);
-    width: 101vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.685);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    font-family: quicksand;
+.modal-create-task,
+.modal-show,
+.modal-edit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(10px);
+  width: 101vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.685);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
+  font-family: quicksand;
 }
 /*clases que permiten visualizar los modales*/
-.modal-create-task.active, .modal-show-active, .modal-edit-active{
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) translateY(0);
+.modal-create-task.active,
+.modal-show-active,
+.modal-edit-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) translateY(0);
 }
 /*estilos de modal agregar tarea*/
 .form {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    width: 40%;
-    min-height: 400px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
-  }
-  .title-form {
-    color: royalblue;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: -1px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .form input {
-    outline: 0;
-    border: 1px solid rgb(219, 213, 213);
-    padding: 8px 14px;
-    border-radius: 8px;
-    width: 100%;
-    height: 50px;
-  }
-  .form .title,.content{
-    font-size: 15px;
-  }
-  .form textarea {
-    border-radius: 8px;
-    height: 100px;
-    width: 100%;
-    resize: none;
-    outline: 0;
-    padding: 8px 14px;
-    border: 1px solid rgb(219, 213, 213);
-  }
-  .form button {
-    align-self: flex-end;
-    padding: 8px;
-    outline: 0;
-    border: 0;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    background-color: royalblue;
-    color: #fff;
-    cursor: pointer;
-  }
-  .options-modal{
-    display: flex;
-    gap: 20px;
-    justify-content: space-around;
-  }
-  #status-option {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    background-color: white;
-    cursor: pointer;
-    outline: none;
-    transition: border-color 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+  min-height: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
 }
-.options-modal .btn-close-modal{
-    background-color: #E57373;
+.title-form {
+  color: var(--color-primary);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form input {
+  outline: 0;
+  border: 1px solid rgb(219, 213, 213);
+  padding: 8px 14px;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+}
+.form .title,
+.content {
+  font-size: 15px;
+}
+.form textarea {
+  border-radius: 8px;
+  height: 100px;
+  width: 100%;
+  resize: none;
+  outline: 0;
+  padding: 8px 14px;
+  border: 1px solid rgb(219, 213, 213);
+}
+.form button {
+  align-self: flex-end;
+  padding: 8px;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+}
+.options-modal {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+#status-option {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.options-modal .btn-close-modal {
+  background-color: var(--color-orange);
 }
 #status-option:focus {
-    border-color: royalblue;
+  border-color: royalblue;
 }
 #status-option:hover {
-    border-color: #888;
+  border-color: #888;
 }
 /* Estilos para las opciones */
 #status-option option {
-    font-size: 16px;
-    background-color: white;
-    color: black;
+  font-size: 16px;
+  background-color: white;
+  color: black;
 }
 /* Estilo para la opción deshabilitada */
 #status-option option:disabled {
-    color: #888;
+  color: #888;
 }
 /*estilos de modal mostrar tarea*/
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    justify-content: center;
-    min-width: 300px;
-    max-width: 1500px;
-    min-height: 40%;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 50%;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    padding: 40px;
-    text-align: justify;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  min-width: 300px;
+  max-width: 1500px;
+  min-height: 40%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  text-align: justify;
 }
-.modal-content p{
-    font-size: 1.2rem;
+.modal-content p {
+  font-size: 1.2rem;
 }
-#modal-title{
-    font-size: 2rem;
-    color: #4169E1;
-    display: flex;
-    justify-content: center;
+#modal-title {
+  font-size: 2rem;
+  color: #4169e1;
+  display: flex;
+  justify-content: center;
 }
 .close {
-    display: flex;
-    justify-content: center;
-    width: 100px;
-    margin: 0 auto;
-    background-color: #4169E1;
-    color: white;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    align-items: center;
-    height: 30px;
-    border: none;
-    box-shadow: 1px 1px 4px rgb(191, 203, 211);
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  margin: 0 auto;
+  background-color: #4169e1;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  align-items: center;
+  height: 30px;
+  border: none;
+  box-shadow: 1px 1px 4px rgb(191, 203, 211);
 }
 .hidden {
-    display: none;
+  display: none;
 }
 /*estilos modal edit*/
-.modal-edit .form #update-status{/*opciones de completa y pendiente en modal edit*/
-    width: 100%;
-    height: 30px;
-    border-radius: 3px;
+.modal-edit .form #update-status {
+  /*opciones de completa y pendiente en modal edit*/
+  width: 100%;
+  height: 30px;
+  border-radius: 3px;
 }
-.modal-edit .form #update-title, #update-content, #update-status{
-    font-size: 1rem;
-    font-family: quicksand;
+.modal-edit .form #update-title,
+#update-content,
+#update-status {
+  font-size: 1rem;
+  font-family: quicksand;
 }
 /* Resaltar la tarea seleccionada */
 .task-select {
-    font-weight: bold;
+  font-weight: bold;
 }
 .tasks-container tbody tr.task-select {
-    border: 2px solid #5490e9;
-    padding: 10px;
+  border: 2px solid #5490e9;
+  padding: 10px;
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
-    .tasks-container {
-        display: flex;
-        flex-direction: column;
-        padding: 0 0%;
-    }
-    .tasks-container thead th {
-        font-size: 17px;
-    }
-    .tasks-container thead th.date {
-        width: 11%;
-    }
-    #action a, #action button {
-        font-size: 12px;
-    }
-    .form {
-        gap: 20px;
-        width: 60%;
-      }
+  .tasks-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0%;
+  }
+  .tasks-container thead th {
+    font-size: 17px;
+  }
+  .tasks-container thead th.date {
+    width: 11%;
+  }
+  #action a,
+  #action button {
+    font-size: 12px;
+  }
+  .form {
+    gap: 20px;
+    width: 60%;
+  }
 }
 
-@media (max-width: 1024px){
-    .tasks-container {
-        padding: 0 0;
-    }
-    .tasks-container thead th {
-        font-size: 15px;
-        padding: 5px;
-    }
-    .tasks-container tbody td {
-        padding: 12px;
-        font-size: 15px;
-    }
-    .all-tasks{
-        padding: 10px;
-    }
-    #action a, #action button {
-        margin: 1px;
-        font-size: 11px;
-    }
-    .container-add-task {
-        bottom: 2vh;
-    }
+@media (max-width: 1024px) {
+  .tasks-container {
+    padding: 0 0;
+  }
+  .tasks-container thead th {
+    font-size: 15px;
+    padding: 5px;
+  }
+  .tasks-container tbody td {
+    padding: 12px;
+    font-size: 15px;
+  }
+  .all-tasks {
+    padding: 10px;
+  }
+  #action a,
+  #action button {
+    margin: 1px;
+    font-size: 11px;
+  }
+  .container-add-task {
+    bottom: 2vh;
+  }
 
-    .item-add {
-        width: 60px;
-        height: 60px;
-    }
-    .item-add img {
-        width: 100%;
-        height: 50px;
-    }
-    .form {
-        width: 60%;
-      }
-    .modal-content {
-        gap: 30px;
-        width: 70%;
-        padding: 40px;
-    }
-    .modal-content p{
-        font-size: 1.1rem;
-    }
-    #modal-title{
-        font-size: 1.8rem;
-    }
+  .item-add {
+    width: 60px;
+    height: 60px;
+  }
+  .item-add img {
+    width: 100%;
+    height: 50px;
+  }
+  .form {
+    width: 60%;
+  }
+  .modal-content {
+    gap: 30px;
+    width: 70%;
+    padding: 40px;
+  }
+  .modal-content p {
+    font-size: 1.1rem;
+  }
+  #modal-title {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .tasks-container {
-        display: flex;
-        flex-direction: column;
-        padding: 0 4%;
-    }
-    .tasks-container thead {
-        display: none;
-    }
-    .tasks-container tbody{
-        display: flex;
-        flex-direction: column;
-        background-color: #F6FBFF;
-        gap: 0px;
-    }
-    .tasks-container tbody tr {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        background-color: #FFFFFF;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        /* align-items: flex-start; */
-    }
-    .tasks-container tbody td {
-        border-right: none;
-        border-left: none;
-    }
-    td#status,td#date{
-        display: flex;
-        text-align: left;
-    }
-    .container-add-task {
-        bottom: 7vh;
-    }
-    .modal-content {
-        gap: 20px;
-        width: 80%;
-        max-width: 500px;
-    }
+  .tasks-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 4%;
+  }
+  .tasks-container thead {
+    display: none;
+  }
+  .tasks-container tbody {
+    display: flex;
+    flex-direction: column;
+    background-color: #f6fbff;
+    gap: 0px;
+  }
+  .tasks-container tbody tr {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    /* align-items: flex-start; */
+  }
+  .tasks-container tbody td {
+    border-right: none;
+    border-left: none;
+  }
+  td#status,
+  td#date {
+    display: flex;
+    text-align: left;
+  }
+  .container-add-task {
+    bottom: 7vh;
+  }
+  .modal-content {
+    gap: 20px;
+    width: 80%;
+    max-width: 500px;
+  }
 }
 @media (max-width: 480px) {
-    .tasks-container {
-        display: flex;
-        flex-direction: column;
-        padding: 0 0%;
-    }
-    .tasks-container tbody td {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px;
-    }
-    .action a, .action button {
-       width: 90%;
-    }
-    .pagination .total{
-        font-size: 14px;
-    }
-    .container-add-task {
-        bottom: 6vh;
-    }
-    .item-add {
-        width: 55px;
-        height: 55px;
-    }
-    .item-add:hover {
-        background-color: #1b1817;
-        transform: scale(1.1);
-    }
-    .item-add a{
-        display: flex;
-        height: 100%;
-        width: 100%;
-        align-items: center;
-    }
-    .item-add img {
-        height: 45px;
-    }
-    .form {
-        width: 75%;
-      }
-      .modal-content {
-        gap: 20px;
-        width: 80%;
-        padding: 20px;
-    }
-    .modal-content p{
-        font-size: 1rem;
-    }
-    #modal-title{
-        font-size: 1.5rem;
-    }
-    .options-modal{
-        gap: 10px;
-      }
-    .close {
-        width: 90px;
-        font-size: 1rem;
-        height: 28px;
-    }
+  .tasks-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0%;
+  }
+  .tasks-container tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+  }
+  .action a,
+  .action button {
+    width: 90%;
+  }
+  .pagination .total {
+    font-size: 14px;
+  }
+  .container-add-task {
+    bottom: 6vh;
+  }
+  .item-add {
+    width: 55px;
+    height: 55px;
+  }
+  .item-add:hover {
+    background-color: #1b1817;
+    transform: scale(1.1);
+  }
+  .item-add a {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+  }
+  .item-add img {
+    height: 45px;
+  }
+  .form {
+    width: 75%;
+  }
+  .modal-content {
+    gap: 20px;
+    width: 80%;
+    padding: 20px;
+  }
+  .modal-content p {
+    font-size: 1rem;
+  }
+  #modal-title {
+    font-size: 1.5rem;
+  }
+  .options-modal {
+    gap: 10px;
+  }
+  .close {
+    width: 90px;
+    font-size: 1rem;
+    height: 28px;
+  }
 }
