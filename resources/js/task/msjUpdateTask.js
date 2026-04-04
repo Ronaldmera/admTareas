@@ -1,6 +1,6 @@
 Swal.fire({
-    icon: "success",
-    title: "Tarea Actualizada",
-    showConfirmButton: false,
-    timer: 1800
-  });
+  icon: 'success',
+  text: 'Tarea Actualizada',
+  showConfirmButton: false,
+  timer: 1800,
+});
