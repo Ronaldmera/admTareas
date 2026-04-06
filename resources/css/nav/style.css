@@ -1,11 +1,12 @@
 .navbar {
   background-color: var(--color-primary);
+  height: var(--navbar-height);
 }
 .sidebar {
   position: fixed;
-  top: 3.5rem;
+  top: var(--navbar-height);
   left: 0;
-  height: 96dvh;
+  height: calc(100dvh - var(--navbar-height));
   width: 15rem;
   border-right: 1px solid rgba(21, 21, 29, 0.18);
   background-color: var(--color-primary);
