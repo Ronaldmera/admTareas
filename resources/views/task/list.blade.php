@@ -13,7 +13,7 @@
     <h2 class="text-center mb-5"><span><i class="bi bi-clipboard-data me-2"></i></span> Todas las Tareas</h2>
     <div class="row">
         <div class="col-12">
-            <div class="pending-tasks bg-white p-5 rounded-4">
+            <div class="pending-tasks bg-white p-5 rounded-4 table-responsive">
                 <h2> Tareas </h2>
                 <table class="table table-striped table-bordered text-center align-middle">
                     <thead>

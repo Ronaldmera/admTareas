@@ -3,7 +3,7 @@
     @vite(['resources/css/profile/style.css'])
 @endsection
 @section('content')
-    <div class="container-profile">
+    {{-- <div class="container-profile">
 
         <div class="profile">
             <h1>Perfil De Usuario</h1>
@@ -39,6 +39,59 @@
                 </form>
             </div>
         </div>
+    </div> --}}
+    <nav aria-label="breadcrumb" class=" bg-white">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href={{ route('dashboard') }}>Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Perfil</li>
+        </ol>
+    </nav>
+    <h2 class="text-start mb-5"> <i class="bi bi-person-circle me-3"></i>Perfil</h2>
+    <div class="row gap-3 align-items-start">
+        <div class="col-4 bg-white card justify-content-center p-5">
+            <!-- Imagen de perfil -->
+            <img src="{{ auth()->user()->image_url }}" alt="Profile Image" class="profile-img">
+            <h2 class="text-center ">{{ $user->name }}</h2>
+        </div>
+        <div class="col bg-white card p-5">
+            <h2 class="">Información de Usuario</h2>
+            <p class=" mb-0 tex fw-bolder">Nombre:</p>
+            <p class="text-muted">{{ $user->name }}</p>
+            <p class=" mb-0 fw-bolder">Correo Electrónico:</p>
+            <p class="text-muted">{{ $user->email }}</p>
+            <p class=" mb-0 fw-bolder">Fecha de Creación:</p>
+            <p class="text-muted">{{ $user->created_at->format('d-m-Y') }}</p>
+            <p class=" mb-0 fw-bolder">Contraseña:</p>
+            <p class="text-muted">************</p>
+
+            <button class="btn btn-primary w-25 btn-show-form-update-password ">Cambiar Contraseña</button>
+            <form action="" method="POST" class=" w-50 d-none form-update-password">
+                @method('put')
+                @csrf
+                <div class="mb-3">
+                    <label class="form-label">Contraseña actual</label>
+                    <input type="password" class="form-control" name="current_password"
+                        placeholder="Ingresa tu contraseña actual">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Nueva contraseña</label>
+                    <input type="password" class="form-control" name="new_password"
+                        placeholder="Ingresa la nueva contraseña">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Confirmar contraseña</label>
+                    <input type="password" class="form-control" name="new_password_confirmation"
+                        placeholder="Confirma la nueva contraseña">
+                </div>
+
+                <div class="">
+                    <button type="submit" class="btn btn-primary">Actualizar contraseña</button>
+                </div>
+
+            </form>
+        </div>
     </div>
     @push('scripts')
         @if (session('update') == 'ok')
@@ -46,6 +99,7 @@
         @endif
         @vite(['resources/js/profile/app.js'])
         @vite(['resources/js/user/userDelete.js'])
+        @vite(['resources/js/profile/showFormUpdatePassword.js'])
         <!-- scripts SweetAlert libreria-->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -13,7 +13,7 @@
     <h2 class="text-center mb-5"> <i class="bi bi-bar-chart me-3"></i>Resumen General</h2>
     <div class="row">
         <div class="col-12">
-            <div class="pending-tasks bg-white p-5 rounded-4">
+            <div class="pending-tasks table-responsive bg-white p-5 rounded-4">
                 <h2> Tareas Pendientes</h2>
                 <table class="table table-striped table-bordered text-center align-middle">
                     <thead>

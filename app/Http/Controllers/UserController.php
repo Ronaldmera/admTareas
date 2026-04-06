@@ -71,4 +71,7 @@ class UserController extends Controller
 
         return redirect()->back()->with('update', 'ok');
     }
+    public function updatePassword( Request $request, $id){
+
+    }
 }
