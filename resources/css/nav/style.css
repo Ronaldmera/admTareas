@@ -5,8 +5,9 @@
   position: fixed;
   top: 3.5rem;
   left: 0;
-  height: 98dvh;
+  height: 96dvh;
   width: 15rem;
   border-right: 1px solid rgba(21, 21, 29, 0.18);
   background-color: var(--color-primary);
+  z-index: 1000;
 }

@@ -48,3 +48,27 @@ h2 {
   color: var(--color-primary);
   margin-bottom: 20px;
 }
+/* Boton menu hamburguesa navbar */
+#menu-toggle {
+  display: none;
+}
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: flex;
+  }
+  .sidebar {
+    left: -15rem;
+    transition: left 0.3s;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+body {
+  overflow-x: hidden;
+}

@@ -37,16 +37,20 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button> --}}
-            <div class=" justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="justify-content-end" id="navbarNav">
+                <ul class="navbar-nav d-flex flex-row align-items-center gap-0">
                     <li class="nav-item d-flex align-items-center">
-                        <span class="text-white">Salir</span>
+                        <span class="text-white me-0">Salir</span>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button type="submit" class="btn">
                                 <i class="bi bi-box-arrow-right text-light fs-5"></i>
                             </button>
                         </form>
+                    </li>
+
+                    <li class="nav-item">
+                        <button id="menu-toggle" class="btn btn-outline-light">☰</button>
                     </li>
                 </ul>
             </div>
