@@ -1,8 +1,13 @@
-.profile-img {
-  object-fit: contain;
-  max-height: 10rem;
+.profile-img,
+.profile-container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center; /* recorta desde el centro */
 }
-.modal-change-password {
+.modal-change-password,
+.modal-update-profile {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -20,15 +25,18 @@
     transform 0.3s ease-out;
   z-index: 11;
 }
-.modal-change-password-active {
+.modal-change-password-active,
+.modal-update-profile-active {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, -50%) translateY(0);
 }
-.form-update-password {
+.form-update-password,
+.profile-container {
   background-color: white;
   padding: 2rem;
   width: 50%; /* ancho base */
   max-width: 600px; /* nunca más grande que 600px */
   min-width: 360px; /* nunca más pequeño que 360px */
+  border-radius: 10px;
 }
