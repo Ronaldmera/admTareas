@@ -18,7 +18,7 @@
   transition:
     opacity 0.3s ease-out,
     transform 0.3s ease-out;
-  font-family: quicksand;
+  z-index: 11;
 }
 .modal-change-password-active {
   opacity: 1;
