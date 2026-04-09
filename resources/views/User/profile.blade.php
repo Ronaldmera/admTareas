@@ -49,12 +49,12 @@
     </nav>
     <h2 class="text-start mb-5"> <i class="bi bi-person-circle me-3"></i>Perfil</h2>
     <div class="row gap-3 align-items-start">
-        <div class="col-4 bg-white card justify-content-center p-5">
+        <div class="col-md-4 bg-white card justify-content-center p-4 p-md-5">
             <!-- Imagen de perfil -->
             <img src="{{ auth()->user()->image_url }}" alt="Profile Image" class="profile-img">
             <h2 class="text-center mt-3">{{ $user->name }}</h2>
         </div>
-        <div class="col bg-white card p-5">
+        <div class="col bg-white card p-4 p-md-5">
             <h2 class="">Información de Usuario</h2>
             <p class=" mb-0 tex fw-bolder">Nombre:</p>
             <p class="text-muted">{{ $user->name }}</p>
@@ -65,11 +65,13 @@
             <p class=" mb-0 fw-bolder">Contraseña:</p>
             <p class="text-muted">************</p>
 
-            <button class="btn btn-primary w-25 btn-show-form-update-password ">Cambiar Contraseña</button>
+            <button class="btn btn-primary mx-auto ms-0 btn-show-form-update-password ">Cambiar
+                Contraseña</button>
             <div class="modal-change-password">
                 <form action="{{ route('profile.updatePassword') }}" method="post" class="form-update-password">
                     @method('put')
                     @csrf
+                    <h2 class=" fw-bold">Cambiar Contraseña</h2>
                     <div class="mb-3">
                         <label class="form-label fw-bolder">Contraseña actual</label>
                         <input type="password" required class="form-control current-password" name="current_password"

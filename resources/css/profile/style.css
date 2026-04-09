@@ -28,5 +28,7 @@
 .form-update-password {
   background-color: white;
   padding: 2rem;
-  min-width: 50rem;
+  width: 50%; /* ancho base */
+  max-width: 600px; /* nunca más grande que 600px */
+  min-width: 360px; /* nunca más pequeño que 360px */
 }

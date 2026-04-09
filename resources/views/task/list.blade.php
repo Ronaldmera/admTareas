@@ -13,7 +13,7 @@
     <h2 class="text-center mb-5"><span><i class="bi bi-clipboard-data me-2"></i></span> Todas las Tareas</h2>
     <div class="row">
         <div class="col-12">
-            <div class="pending-tasks bg-white p-5 rounded-4 table-responsive">
+            <div class="pending-tasks bg-white p-3 p-md-5 rounded-4 table-responsive">
                 <h2> Tareas </h2>
                 <table class="table table-striped table-bordered text-center align-middle">
                     <thead>
@@ -39,19 +39,63 @@
                                     <td id="status">{{ $task->status }}</td>
                                     <td id="date">{{ $task->created_at->format('d-m-Y') }}</td>
                                     <td id="end_date">{{ $task->end_date->format('d-m-Y') }}</td>
-                                    <td id="action" class="d-flex gap-2 justify-content-center">
-                                        <button class="btn-show-task btn btn-primary"
-                                            data-id="{{ $task->id }}">Mostrar</button>
+                                    <td class="align-middle">
+                                        {{-- Desktop: botones icon-only en fila --}}
+                                        <div class="d-none d-md-flex gap-1 align-items-center justify-content-center">
+                                            <button class="btn-show-task btn btn-primary btn-sm"
+                                                data-id="{{ $task->id }}" title="Mostrar">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
 
-                                        <button class="btn-edit-task btn btn-secondary"
-                                            data-id="{{ $task->id }}">Editar</button>
+                                            <button class="btn-edit-task btn btn-secondary btn-sm"
+                                                data-id="{{ $task->id }}" title="Editar">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
 
-                                        <form class="delete d-inline" action="{{ route('task.destroy', $task->id) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            <button type="submit" class="btn btn-orange">Eliminar</button>
-                                        </form>
+                                            <form class="delete d-inline" action="{{ route('task.destroy', $task->id) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+
+                                        {{-- Móvil: dropdown colapsado --}}
+                                        <div class="d-md-none dropdown">
+                                            <button class="btn btn-secondary btn-sm dropdown-toggle"
+                                                data-bs-toggle="dropdown">
+                                                Acciones
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <button class="btn-show-task dropdown-item"
+                                                        data-id="{{ $task->id }}">
+                                                        <i class="bi bi-eye me-2"></i>Mostrar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn-edit-task dropdown-item"
+                                                        data-id="{{ $task->id }}">
+                                                        <i class="bi bi-pencil me-2"></i>Editar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <form class="delete" action="{{ route('task.destroy', $task->id) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="submit" class="dropdown-item text-danger">
+                                                            <i class="bi bi-trash me-2"></i>Eliminar
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
