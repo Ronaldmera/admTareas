@@ -1,63 +1,14 @@
-.container-profile {
-  display: flex;
-  flex-direction: column;
-  height: 90vh;
-  /* background-color: rgb(223, 234, 240); */
-  max-width: 600px;
-  justify-content: center;
-  margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
-  gap: 20px;
-  text-align: center;
-  align-items: center;
-  color: whitesmoke;
+.profile-img {
+  object-fit: contain;
+  max-height: 10rem;
 }
-.container-profile h1 {
-  font-size: 2rem;
-  color: #74b3ce;
-}
-.container-profile p {
-  font-size: 1.3rem;
-}
-.profile {
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-  justify-content: center;
-  height: 70%;
-  width: 90%;
-  padding: 5%;
-  background-color: #1e2e3b;
-  border-radius: 20px;
-  position: relative;
-}
-.profile img {
-  display: flex;
-  margin: 0 auto;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-}
-.profile .name,
-.email {
-  font-weight: bolder;
-  /* color: #333; */
-}
-.btn-user-delete {
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  background-color: #74b3ce;
-  color: white;
-}
-.container-form {
+.modal-change-password {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) translateY(10px);
   width: 101vw;
-  height: 103vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.685);
   display: flex;
   justify-content: center;
@@ -67,57 +18,15 @@
   transition:
     opacity 0.3s ease-out,
     transform 0.3s ease-out;
+  font-family: quicksand;
 }
-.modal-edit-active {
+.modal-change-password-active {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, -50%) translateY(0);
 }
-.profile .edit-ico,
-.container-form .close-edit-ico {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  cursor: pointer;
-}
-.container-form form {
-  position: relative;
-  background-color: rgb(99, 107, 107);
-  min-width: 400px;
-  min-height: 200px;
-  padding: 30px;
-  justify-content: center;
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-radius: 10px;
-}
-.container-form form label,
-input {
-  height: 30px;
-  text-align: center;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-}
-.container-form #image {
-  font-size: 13px;
-  border-radius: 0;
-}
-.container-form form button {
-  height: 30px;
-  width: 50%;
-  border-radius: 10px;
-  border: none;
-  margin: 0 auto;
-  background-color: rgb(25, 151, 224);
-  color: white;
-}
-.profile-img {
-  object-fit: contain;
-  max-height: 10rem;
+.form-update-password {
+  background-color: white;
+  padding: 2rem;
+  min-width: 50rem;
 }

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('styles')
     @vite(['resources/css/profile/style.css'])
+    {{-- @vite(['resources/css/task/style.css']) --}}
 @endsection
 @section('content')
     {{-- <div class="container-profile">
@@ -51,7 +52,7 @@
         <div class="col-4 bg-white card justify-content-center p-5">
             <!-- Imagen de perfil -->
             <img src="{{ auth()->user()->image_url }}" alt="Profile Image" class="profile-img">
-            <h2 class="text-center ">{{ $user->name }}</h2>
+            <h2 class="text-center mt-3">{{ $user->name }}</h2>
         </div>
         <div class="col bg-white card p-5">
             <h2 class="">Información de Usuario</h2>
@@ -65,38 +66,47 @@
             <p class="text-muted">************</p>
 
             <button class="btn btn-primary w-25 btn-show-form-update-password ">Cambiar Contraseña</button>
-            <form action="" method="POST" class=" w-50 d-none form-update-password">
-                @method('put')
-                @csrf
-                <div class="mb-3">
-                    <label class="form-label">Contraseña actual</label>
-                    <input type="password" class="form-control" name="current_password"
-                        placeholder="Ingresa tu contraseña actual">
-                </div>
+            <div class="modal-change-password">
+                <form action="{{ route('profile.updatePassword') }}" method="post" class="form-update-password">
+                    @method('put')
+                    @csrf
+                    <div class="mb-3">
+                        <label class="form-label fw-bolder">Contraseña actual</label>
+                        <input type="password" required class="form-control current-password" name="current_password"
+                            placeholder="Ingresa tu contraseña actual">
+                    </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Nueva contraseña</label>
-                    <input type="password" class="form-control" name="new_password"
-                        placeholder="Ingresa la nueva contraseña">
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bolder">Nueva contraseña</label>
+                        <input type="password" required class="form-control new-password" name="new_password"
+                            placeholder="Ingresa la nueva contraseña">
+                        <p class="text-danger text-password-error"></p>
 
-                <div class="mb-3">
-                    <label class="form-label">Confirmar contraseña</label>
-                    <input type="password" class="form-control" name="new_password_confirmation"
-                        placeholder="Confirma la nueva contraseña">
-                </div>
+                    </div>
 
-                <div class="">
-                    <button type="submit" class="btn btn-primary">Actualizar contraseña</button>
-                </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bolder">Confirmar contraseña</label>
+                        <input type="password" required class="form-control confirm-new-password"
+                            name="new_password_confirmation" placeholder="Confirma la nueva contraseña">
+                        <p class="text-danger text-password-error"></p>
+                    </div>
 
-            </form>
+                    <div>
+                        <button type="button" class="btn btn-secondary btn-cancel">Cancelar</button>
+                        <button type="submit" class="btn btn-primary btn-change-password">Actualizar contraseña</button>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
     @push('scripts')
         @if (session('update') == 'ok')
             @vite(['resources/js/profile/msjProfileUpdate.js'])
         @endif
+        <script>
+            window.updatePasswordStatus = @json(session('updatePassword'));
+        </script>
         @vite(['resources/js/profile/app.js'])
         @vite(['resources/js/user/userDelete.js'])
         @vite(['resources/js/profile/showFormUpdatePassword.js'])

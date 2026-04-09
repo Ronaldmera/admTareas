@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
@@ -71,7 +72,22 @@ class UserController extends Controller
 
         return redirect()->back()->with('update', 'ok');
     }
-    public function updatePassword( Request $request, $id){
+    public function updatePassword(Request $request){
+        $user = auth()->user();
+        $passwordReceived = $request-> current_password;
+        $passwordUser = $user->password;
+
+        // validando si la contraseña ingresada coincide con la de la Bd
+        if (Hash::check($passwordReceived, $passwordUser)) {
+        // contraseña correcta
+            $user->password = Hash::make($request->new_password);
+            $user->save();
+            return redirect()->route('user.showProfile')->with('updatePassword', 'ok');
+
+        } else {
+            // contraseña incorrecta
+            return redirect()->route('user.showProfile')->with('updatePassword', 'error');
+        }
 
     }
 }

@@ -28,6 +28,7 @@ Route::controller(UserController::class)->group(function(){
     Route::delete('user/{id}','destroy')->name('user.destroy');//elimina el usuario
     Route::get('user/profile','showProfile')->name('user.showProfile');//muestra la vista del perfil del usuario
     Route::put('/profile/update','profileUpdate')->name('profile.update');
+    Route::put('/profile/updatePassword','updatePassword')->name('profile.updatePassword');
 });
 
 Route::controller(TaskController::class)->group(function(){
