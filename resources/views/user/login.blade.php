@@ -10,9 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    @vite(['resources/css/Login/style.css'])
+    @vite(['resources/css/login/style.css'])
     <!-- estilos de error al logearse-->
-    @vite(['resources/css/Login/login_error.css'])
+    @vite(['resources/css/login/login_error.css'])
 
     <!-- js-->
     <!-- js muestra la contraseña y la oculta al hacer click en el icono del ojo-->
