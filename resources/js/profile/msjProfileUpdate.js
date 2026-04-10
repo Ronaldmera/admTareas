@@ -1,6 +1,6 @@
 Swal.fire({
-    icon: "success",
-    title: "Perfil Actualizado",
-    showConfirmButton: false,
-    timer: 1800
-  });
+  icon: 'success',
+  text: 'Perfil Actualizado',
+  showConfirmButton: false,
+  timer: 1800,
+});
