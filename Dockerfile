@@ -1,24 +1,16 @@
 FROM php:8.2-cli
 
-# =========================
-# Directorio de trabajo
-# =========================
 WORKDIR /app
 
 # =========================
-# Dependencias del sistema
+# Sistema
 # =========================
 RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
-    curl \
-    libpq-dev \
-    libzip-dev \
-    zip \
+    git unzip curl zip libpq-dev libzip-dev \
     && docker-php-ext-install pdo pdo_pgsql zip
 
 # =========================
-# Instalar Node (IMPORTANTE: versión correcta)
+# Node.js (ANTES del build)
 # =========================
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs
@@ -34,27 +26,24 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY . .
 
 # =========================
-# Instalar dependencias PHP
+# PHP deps
 # =========================
 RUN composer install --no-dev --optimize-autoloader
 
 # =========================
-# Instalar dependencias Node + build Vite
+# FRONTEND BUILD s
 # =========================
 RUN npm install
 RUN npm run build
 
+# DEBUG opcional
+RUN ls -la public/build
+
 # =========================
-# Permisos Laravel
+# Permisos
 # =========================
 RUN chmod -R 777 storage bootstrap/cache
 
-# =========================
-# Puerto Render
-# =========================
 EXPOSE 10000
 
-# =========================
-# Comando de inicio
-# =========================
 CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=10000
