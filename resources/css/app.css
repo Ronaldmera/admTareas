@@ -1,20 +1,2 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import 'bootstrap-icons/font/bootstrap-icons.css';
-/* Dashboard */
-@import 'dashboard/style.css';
-
-/* Login */
-@import 'login/style.css';
-@import 'login/login_error.css';
-
-/* Nav */
-@import 'nav/style.css';
-
-/* Profile */
-@import 'profile/style.css';
-
-/* Task */
-@import 'task/style.css';
-
-/* User */
-@import 'user/create.css';
