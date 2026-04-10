@@ -1,0 +1,456 @@
+/*contenedor padre de la imagen*/
+.hero{
+    display: flex;
+    position: relative;
+    height: auto;
+}
+/*contenedor de las imagenes en diferente tamaño*/
+.picture{
+    display: flex;
+    height: auto;
+    opacity: 0.8;
+}
+/*imagen de fondo*/
+.picture img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(20%) brightness(90%);
+    object-fit: cover;
+    min-height: 90vh;
+    /*hace que la imagen ocupe toda la pantalla en todos los dispositivos*/
+}
+/*contenedor del texto de bienvenida*/
+.text-welcome{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    bottom: 100px;
+}
+/* Título principal con el nombre */
+.dashboard-title {
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    /* margin-top: 30px; */
+    position: relative;
+    bottom: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:#10749e;
+}
+/*mesaje debajo del nombre*/
+.msg{
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0c3740;
+    font-weight:300;
+    text-shadow: 1px 1px 1px #10749e;
+}
+.subtitle-general-summary{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    display: flex;
+    font-size: 3rem;
+    padding: 20px;
+    color: #74B3CE;
+}
+/* Contenedor principal */
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 12%;
+    gap: 5%;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+}
+/*mensaje que se activa al no haber tareas*/
+.msj-task-empty{
+    text-align: center;
+    color: red;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 90px;
+    background-color: #edf1f5af;
+    border-radius: 12px;
+}
+/* Contenedor de tareas pendientes */
+.pending-tasks {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    /* border: 2px solid #3b83f64f; */
+    border-radius: 20px;
+    padding: 20px;
+    /* max-width: 1000px; */
+}
+/* Título de la sección de tareas */
+.pending-tasks h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #172a3a;
+}
+/* Tabla de tareas */
+.table-responsive {
+    overflow-x: auto;
+}
+.dashboard-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.dashboard-container thead {
+    background:#172a3a;
+    color: whitesmoke;
+    text-align: center;
+}
+.dashboard-container thead th {
+    padding: 12px;
+    font-weight: bold;
+    /* width: 100%; */
+    font-size: 15px;
+}
+.dashboard-container tbody tr {
+    border-bottom: 1px solid #ddd;
+    background-color: #FFFFFF;
+}
+.dashboard-container tbody tr:last-child {
+    border-bottom: none;
+}
+.dashboard-container tbody td {
+    padding: 12px;
+    color: #202020;
+    background-color: #FFFFFF;
+    border-right: 1px solid #55555528;
+    border-left: 1px solid #55555528;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+
+}
+/*asignando el ancho de cada th*/
+.dashboard-container thead th.title{
+    width: 30%;
+}
+.dashboard-container thead th.content{
+    width: 40%;
+}
+.dashboard-container thead th.status{
+    width: 15%;
+}
+.dashboard-container thead th.date{
+    width: 15%;
+}
+#pending, #date{
+    text-align: center;
+}
+
+ tbody #pending{
+    color:#E57373;
+    font-weight: bolder;
+ }
+ .task-title a{
+    color: #4091e9;
+}
+.grafic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/*estilos grafica cuando no hayan tareas*/
+.grafic-empty{
+    position: relative;
+    top: 0px;
+}
+.grafic h2{
+    margin-bottom: 2rem;
+      color: #172a3a;
+}
+/*contenedor de la grafica*/
+#myChart {
+    max-width: 400px;
+    max-height: 400px;
+    margin: auto;
+    display: block;
+}
+#tasks-empty{
+    position: relative;
+    bottom: 130px;
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+}
+.pagination a,.pagination span {
+    display: inline-block;
+    padding: 3px;
+    text-decoration: none;
+    color: #172a3a;
+    border-radius: 4px;
+    background-color: #d1d1d16c;
+}
+.pagination a[rel="prev"],
+.pagination a[rel="next"],
+.pagination span[aria-hidden="true"] {
+    color: #f3f5f5; /* Cambia el color de los símbolos */
+    font-size: 1.5rem;
+    font-weight:bold;
+    width: 20px;
+    background-color: #8f8d8d;
+}
+
+.pagination .active span {
+    color:#14a9e9;
+}
+.note p{
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.resume{
+    margin-top: 100px;
+    padding-bottom: 150px;
+}
+.resume h2{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+    display: flex;
+    font-size: 3rem;
+    padding: 20px;
+    color: #74B3CE;
+}
+.resume .cards{
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+.cards .item-card{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    height: 300px;
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: space-evenly;
+    transition: transform 0.3s ease;
+    box-shadow: 1px 2px 10px  rgb(174, 202, 243);
+}
+.cards .item-card:hover{
+     box-shadow: 1px 2px 10px  gray;
+    transform: scale(1.02);
+}
+.item-card img{
+    height: 30%;
+}
+.item-card h3{
+    font-size: 1.4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.item-card p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    color: #14a9e9;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .text-welcome{
+        top: 0px;
+    }
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 5%;
+    }
+    .grafic{
+        position: relative;
+        top: 40px;
+    }
+    .grafic-empty{
+        position: relative;
+        top: 100px;
+    }
+}
+
+@media (max-width: 1024px){
+    .text-welcome{
+        top: 0px;
+    }
+    .text-welcome .dashboard-title{
+        font-size: 3.5rem;
+    }
+    .text-welcome .msg{
+        padding: 0 20px;
+        font-size: 2.2rem;
+    }
+    .dashboard-container {
+        padding: 0 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .subtitle-general-summary {
+        font-size: 2.8rem;
+    }
+    .grafic{
+        position: relative;
+        top: 40px;
+    }
+    .grafic-empty{
+        position: relative;
+        top: 100px;
+    }
+    .resume h2{
+        font-size: 2.8rem;
+    }
+    .resume .cards{
+        gap: 40px;
+    }
+    .cards .item-card{
+        height: 280px;
+        width: 280px;
+    }
+}
+@media (max-width: 768px) {
+    .text-welcome .dashboard-title{
+        font-size: 3rem;
+    }
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0%;
+    }
+    .dashboard-container thead {
+        display: none;
+    }
+    .dashboard-container tbody{
+        display: flex;
+        flex-direction: column;
+        background-color: #F0F4F8;
+        gap: 0px;
+    }
+    .dashboard-container tbody tr {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+    .dashboard-container tbody td {
+        border-right: none;
+        border-left: none;
+    }
+    #pending, #date{
+        text-align: left;
+    }
+    .note p{
+        font-size: 17px;
+    }
+    .subtitle-general-summary {
+        font-size: 2.5rem;
+    }
+    .resume h2{
+        font-size: 2.5rem;
+    }
+    .resume .cards{
+        gap: 10px;
+        padding: 10px;
+    }
+    .cards .item-card{
+        height: 270px;
+        width: 260px;
+    }
+    #myChart {
+        max-width: 270px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pending-tasks{
+        padding: 0;
+    }
+    .text-welcome .dashboard-title{
+        font-size: 2.7rem;
+    }
+    .text-welcome .msg{
+        padding: 0 20px;
+        font-size: 1.8rem;
+    }
+    .subtitle-general-summary{
+        font-size: 2.2rem;
+    }
+    .dashboard-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0%;
+    }
+    .note p{
+        font-size: 15px;
+    }
+    #myChart {
+        max-width: 240px;
+    }
+    .grafic{
+        font-size: 1rem;
+        margin-top: 22px;
+    }
+    .grafic h2{
+        margin-bottom: 1rem;
+    }
+    .resume h2{
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    .resume .cards{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    .cards .item-card{
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+        width: 100%;
+        padding: 10px;
+    }
+    .item-card img{
+        height: 30%;
+    }
+    .item-card h3{
+        font-size: 1.2rem;
+    }
+    .item-card p{
+        font-size: 1.1rem;
+    }
+}
