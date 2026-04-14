@@ -121,7 +121,7 @@
             window.updatePasswordStatus = @json(session('updatePassword'));
         </script>
         @vite(['resources/js/profile/app.js'])
-        @vite(['resources/js/user/userDelete.js'])
+        {{-- @vite(['resources/js/user/userDelete.js']) --}}
         @vite(['resources/js/profile/showFormUpdatePassword.js'])
         @vite(['resources/js/profile/showModalUpdateProfile.js'])
         <!-- scripts SweetAlert libreria-->

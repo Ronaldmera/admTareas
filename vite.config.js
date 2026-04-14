@@ -43,7 +43,6 @@ export default defineConfig({
         'resources/js/task/taskDelete.js',
 
         'resources/js/user/msjUserDelete.js',
-        'resources/js/user/userDelete.js',
       ],
       refresh: true,
     }),
