@@ -13,7 +13,7 @@
     <h2 class="text-center mb-5"> <i class="bi bi-bar-chart me-3"></i>Resumen General</h2>
     <div class="row">
         <div class="col-12">
-            <div class="pending-tasks table-responsive bg-white p-5 rounded-4">
+            <div class="pending-tasks table-responsive bg-white p-2 p-md-5 rounded-4">
                 <h2> Tareas Pendientes</h2>
                 <table class="table table-striped table-bordered text-center align-middle">
                     <thead>
@@ -45,9 +45,9 @@
 
     </div>
     <div class="row my-2 g-0 gap-3 justify-content-between">
-        <div class="col rounded-4  bg-white p-5">
+        <div class="col rounded-4  bg-white p-2 p-md-5">
             <h2 class="d-flex justify-content-center ">Resumen de Tareas</h2>
-            <div class="row justify-content-center gap-5">
+            <div class="row justify-content-center gap-2 gap-md-5">
                 <div class="card bg-secondary">
                     <i class="bi bi-clipboard-check fs-1 color-primary"></i>
                     <div class="card-body">

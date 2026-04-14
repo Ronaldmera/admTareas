@@ -42,7 +42,7 @@
 .main-content {
   margin-left: 15rem;
   margin-top: var(--navbar-height);
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   background-color: #e6edef;
   min-height: calc(100dvh - var(--navbar-height));
 }
