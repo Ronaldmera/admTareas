@@ -17,6 +17,7 @@ export default defineConfig({
         'resources/css/nav/style.css',
         'resources/css/profile/style.css',
         'resources/css/task/style.css',
+        'resources/css/user/create.css',
 
         // JS
         'resources/js/bootstrap.js',
