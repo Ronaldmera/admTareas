@@ -28,6 +28,7 @@ export default defineConfig({
         'resources/js/profile/msjProfileUpdate.js',
         'resources/js/profile/showFormUpdatePassword.js',
         'resources/js/profile/showModalUpdateProfile.js',
+        'resources/js/profile/app.js',
 
         'resources/js/task/colorTaskStatus.js',
         'resources/js/task/grafic.js',
