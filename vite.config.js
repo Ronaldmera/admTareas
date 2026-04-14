@@ -42,6 +42,7 @@ export default defineConfig({
         'resources/js/task/notification.js',
         'resources/js/task/taskDelete.js',
 
+        'resources/js/user/userDelete.js',
         'resources/js/user/msjUserDelete.js',
         'resources/js/user/UserDelete.js',
       ],
